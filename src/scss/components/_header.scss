@@ -1,5 +1,5 @@
 $header-btn-color: #1b3a5c;
-$topbar-bg: #f0eae0;
+$topbar-bg: #f9f3ed;
 
 // ─── Topbar ───────────────────────────────────────────────────────────────────
 .topbar {
@@ -88,10 +88,12 @@ $topbar-bg: #f0eae0;
 
 // ─── Main header row ─────────────────────────────────────────────────────────
 .site-header {
-  background: #fff;
+  background: transparent;
 }
 
 .header-main {
+  background: #fff;
+  border-radius: 40px 40px 0 0;
   padding: 18px 0;
 
   &__inner {
@@ -137,6 +139,10 @@ $topbar-bg: #f0eae0;
   }
 }
 
+.page-vb .header-main {
+  border-radius: 40px;
+}
+
 // ─── Navigation ──────────────────────────────────────────────────────────────
 .header-nav {
   &__list {
@@ -166,6 +172,10 @@ $topbar-bg: #f0eae0;
 
   &__icon-item > a {
     padding: 8px 10px;
+  }
+
+  &__icon-item:last-child > a {
+    padding-right: 0;
 
     img {
       width: 20px;

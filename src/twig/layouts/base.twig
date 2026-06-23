@@ -12,7 +12,7 @@
 
   {% block head %}{% endblock %}
 </head>
-<body>
+<body class="{% block body_class %}{% endblock %}">
 
   {# Контейнер для AJAX-уведомлений OpenCart (корзина / сравнение / избранное) #}
   <div id="alert"></div>
