@@ -183,9 +183,19 @@ body.menu-open { overflow: hidden; }
   .header-action span { display: none; }
   .header-action__badge { top: -2px; right: 0; }
 
-  // ── Footer accordion ──
-  .footer-callback__row { flex-wrap: wrap; gap: 12px; }
-  .footer-callback__logo { display: none; }
+  // ── Footer callback (mobile) ──
+  .footer-callback__row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .footer-callback__logo {
+    display: block;
+    svg { height: 44px; width: auto; }
+  }
+
+  .footer-callback__text { display: block; }
 
   .footer-callback__form {
     display: flex;
@@ -260,7 +270,6 @@ body.menu-open { overflow: hidden; }
   }
 
   .footer-bottom__inner { flex-direction: column; gap: 12px; text-align: center; }
-  .footer-callback__row { flex-direction: column; align-items: stretch; }
 
   // ── Auth modal → bottom sheet ──
   .auth-overlay { align-items: flex-end; padding: 0; }
