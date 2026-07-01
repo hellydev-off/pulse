@@ -184,11 +184,40 @@ body.menu-open { overflow: hidden; }
   .header-action__badge { top: -2px; right: 0; }
 
   // ── Footer accordion ──
-  .footer-callback__row { flex-wrap: wrap; gap: 16px; }
+  .footer-callback__row { flex-wrap: wrap; gap: 12px; }
   .footer-callback__logo { display: none; }
+
+  // Форма обратной связи — вертикальная компактная карточка
+  .footer-callback__form {
+    flex-direction: column;
+    gap: 10px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    width: 100%;
+  }
+
   .footer-callback__input {
     width: 100%;
+    height: 48px;
     border-radius: 10px;
+    border: 1.5px solid $c-border;
+    font-size: 15px;
+    padding: 0 16px;
+    background: $c-footer-bg;
+
+    &:focus {
+      border-color: $c-primary;
+      background: #fff;
+    }
+  }
+
+  .footer-callback__btn {
+    width: 100%;
+    border-radius: 10px;
+    height: 48px;
+    font-size: 15px;
   }
 
   .footer-nav .row > div:not(:last-child) { margin-bottom: 4px; }
@@ -236,8 +265,6 @@ body.menu-open { overflow: hidden; }
 
   .footer-bottom__inner { flex-direction: column; gap: 12px; text-align: center; }
   .footer-callback__row { flex-direction: column; align-items: stretch; }
-  .footer-callback__form { flex-direction: column; }
-  .footer-callback__btn { width: 100%; }
 
   // ── Auth modal → bottom sheet ──
   .auth-overlay { align-items: flex-end; padding: 0; }
