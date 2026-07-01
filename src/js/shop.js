@@ -483,16 +483,9 @@
       var $addr = $('#coAddress');
       if (!$.trim($addr.val())) { markError($addr); errors++; }
 
-      // Agreement
-      var agreed = $('#coAgree').is(':checked');
-
       if (errors > 0) {
         $errBox.text('Пожалуйста, заполните корректно все выделенные поля').show();
         $('html, body').animate({ scrollTop: $('.checkout-section').first().offset().top - 120 }, 300);
-        return;
-      }
-      if (!agreed) {
-        $errBox.text('Необходимо согласиться с правилами торговой площадки').show();
         return;
       }
       $errBox.hide();

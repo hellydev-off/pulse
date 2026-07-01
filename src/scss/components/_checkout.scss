@@ -486,11 +486,18 @@
     &:hover { background: darken($c-primary, 8%); }
   }
 
-  &__agree {
-    font-size: 12px;
+  &__agree-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  &__agree-text {
+    font-size: 11px;
     color: $c-muted;
     line-height: 1.5;
-    align-items: flex-start;
+    padding-top: 1px;
 
     a { color: $c-primary; }
   }

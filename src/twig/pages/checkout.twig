@@ -267,11 +267,15 @@
 
       <button type="button" class="checkout-sidebar__submit" id="coSubmit">Оформить заказ</button>
 
-      <label class="checkout-sidebar__agree cart-checkbox">
-        <input type="checkbox" id="coAgree" checked>
-        <span class="cart-checkbox__mark"></span>
-        <span>Соглашаюсь с <a href="#">правилами пользования торговой площадкой</a> и возврата</span>
-      </label>
+      <div class="checkout-sidebar__agree-wrap">
+        <label class="cart-checkbox" for="coAgree">
+          <input type="checkbox" id="coAgree" checked>
+          <span class="cart-checkbox__mark"></span>
+        </label>
+        <span class="checkout-sidebar__agree-text">
+          Соглашаюсь с <a href="#">правилами пользования торговой площадкой</a> и возврата
+        </span>
+      </div>
     </aside>
 
   </div>{# /checkout-layout #}
