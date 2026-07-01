@@ -1,172 +1,191 @@
-$footer-border: #e2e6ea;
-$footer-text: #5e6b7e;
-$footer-navy: #1b3a5c;
-
 .site-footer {
+  background: $c-footer-bg;
+  margin-top: auto;
+}
+
+// ─── Callback section ─────────────────────────────────────────────────────────
+.footer-callback {
+  padding: 28px 0;
+  border-bottom: 1px solid $c-border;
+}
+
+.footer-callback__row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.footer-callback__logo {
+  flex-shrink: 0;
+  img { height: 40px; width: auto; }
+}
+
+.footer-callback__text {
+  flex: 1;
+  font-size: 15px;
+  color: $c-text;
+  line-height: 1.4;
+  max-width: 340px;
+}
+
+.footer-callback__form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.footer-callback__input {
+  width: 220px;
+  height: 46px;
+  padding: 0 18px;
+  border: 1px solid $c-border;
+  border-radius: 8px;
+  font-size: 15px;
   background: #fff;
-  color: $footer-text;
+  color: $c-text;
+  outline: none;
+  transition: border-color .18s;
+
+  &::placeholder { color: $c-muted; }
+  &:focus { border-color: $c-primary; }
+}
+
+.footer-callback__btn {
+  height: 46px;
+  padding: 0 24px;
+  background: $c-primary;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .18s;
+
+  &:hover { background: darken($c-primary, 8%); }
+}
+
+// ─── Nav columns ──────────────────────────────────────────────────────────────
+.footer-nav {
+  padding: 40px 0 32px;
+}
+
+.footer-nav__title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: $c-dark;
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid $c-primary;
+  display: inline-block;
+}
+
+.footer-nav__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li { margin-bottom: 10px; }
 
   a {
-    text-decoration: none;
-    transition: color 0.2s;
-
-    &:hover {
-      color: $footer-navy;
-      text-decoration: none;
-    }
-  }
-
-  // ── Логотип + контакты ────────────────────────────────────────────────────
-  &__top {
-    padding: 28px 0;
-  }
-
-  &__top-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-  }
-
-  &__logo {
-    display: inline-block;
-    flex-shrink: 0;
-
-    img {
-      height: 56px;
-      display: block;
-    }
-  }
-
-  &__contacts {
-    display: flex;
-    gap: 16px;
-  }
-
-  &__contact-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 13px 22px;
-    border: 1.5px solid $footer-border;
-    border-radius: 8px;
-    font-size: 15px;
-    color: #222;
-    white-space: nowrap;
-
-    img,
-    svg {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
-    }
-
-    &:hover {
-      border-color: $footer-navy;
-      color: $footer-navy;
-    }
-  }
-
-  // ── Услуги и цены ─────────────────────────────────────────────────────────
-  &__services {
-    padding: 28px 0 32px;
-  }
-
-  &__services-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: #111;
-    margin: 0 0 16px;
-  }
-
-  &__services-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px 24px;
-  }
-
-  &__services-col {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-    a {
-      font-size: 16px;
-      color: $footer-text;
-
-      &:hover {
-        color: $footer-navy;
-      }
-    }
-  }
-
-  // ── Навигация ─────────────────────────────────────────────────────────────
-  &__nav-section {
-    border-top: 1px solid $footer-border;
-    border-bottom: 1px solid $footer-border;
-    padding: 22px 0;
-  }
-
-  &__nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    a {
-      font-size: 22px;
-      font-weight: 700;
-      color: #111;
-
-      &:hover {
-        color: $footer-navy;
-      }
-    }
-  }
-
-  // ── Нижняя строка ─────────────────────────────────────────────────────────
-  &__bottom {
-    padding: 20px 0 24px;
-  }
-
-  &__bottom-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-  }
-
-  &__copy {
     font-size: 14px;
-    color: #777;
-    margin: 0;
-    line-height: 1.6;
-    flex: 1;
+    color: $c-text;
+    &:hover { color: $c-primary; }
   }
+}
 
-  &__legal {
-    display: flex;
-    flex-direction: column;
+// ─── Contact column ───────────────────────────────────────────────────────────
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: $c-text;
+
+  .svg-icon {
+    color: $c-muted;
+    margin-top: 2px;
     flex-shrink: 0;
-
-    a {
-      font-size: 14px;
-      color: #555;
-      text-decoration: underline;
-
-      &:hover {
-        color: $footer-navy;
-      }
-    }
   }
+}
 
-  &__seo {
-    display: inline-flex;
-    align-items: center;
-    flex-shrink: 0;
+.footer-contact-item__address-title {
+  font-weight: 600;
+  color: $c-dark;
+  display: block;
+}
 
-    img {
-      height: 38px;
-      display: block;
-    }
-  }
+.footer-contact-item__address-sub {
+  font-size: 13px;
+  color: $c-muted;
+  display: block;
+  margin-top: 2px;
+}
+
+// ─── Social icons ─────────────────────────────────────────────────────────────
+.footer-socials {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.footer-social {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: opacity .18s;
+
+  &:hover { opacity: .85; }
+
+  &--ok  { background: #EE8208; }
+  &--tg  { background: #27A7E7; }
+  &--vk  { background: #4680C2; }
+}
+
+// ─── Bottom bar ───────────────────────────────────────────────────────────────
+.footer-bottom {
+  border-top: 1px solid $c-border;
+  padding: 16px 0;
+}
+
+.footer-bottom__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-bottom__copy {
+  font-size: 13px;
+  color: $c-muted;
+  margin: 0;
+}
+
+.footer-bottom__payments {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.payment-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: $c-muted;
+  letter-spacing: .04em;
 }

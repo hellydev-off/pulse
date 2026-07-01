@@ -4,91 +4,57 @@
 
 {% block content %}
 
-<div class="catalog-page">
-  <div class="container">
+<div class="container">
 
-    {# ── Хлебные крошки ─────────────────────────────────────────────────────── #}
-    <ol class="breadcrumb">
-      <li><a href="index.html">Главная</a></li>
-      <li class="active">Каталог</li>
-    </ol>
+  {# ── Breadcrumb ── #}
+  <nav class="breadcrumb-nav" aria-label="breadcrumb">
+    <a href="/">Главная</a>
+    <span class="breadcrumb-nav__sep">—</span>
+    <span>Каталог</span>
+  </nav>
 
-    {# ── Трёхколонная сетка OpenCart: left / content / right ────────────────── #}
-    {# Класс #content в OpenCart выставляется динамически по наличию колонок. #}
-    {% if column_left and column_right %}
-      {% set content_class = 'col-sm-6' %}
-    {% elseif column_left or column_right %}
-      {% set content_class = 'col-sm-9' %}
-    {% else %}
-      {% set content_class = 'col-sm-12' %}
-    {% endif %}
+  {# ── Main categories ── #}
+  <section class="catalog-cats">
+    <h2 class="catalog-section__title">Основные категории товаров:</h2>
+    <div class="catalog-cats__grid">
 
-    <div class="row">
+      <a href="catalog-category.html" class="catalog-cat-card">
+        <span class="catalog-cat-card__name">Спортивное<br>метание ножа</span>
+        <img src="/images/catalog/Фон.png" alt="Спортивное метание ножа" class="catalog-cat-card__img">
+      </a>
 
-      {# Левая колонка — фильтры #}
-      <div id="column-left" class="col-sm-3">
-        <div class="panel panel-default">
-          <div class="panel-heading"><h4 class="panel-title">Фильтр</h4></div>
-          <div class="panel-body">
-            <div class="form-group">
-              <label>Цена, ₽</label>
-              <input type="number" class="form-control input-sm" placeholder="от">
-              <input type="number" class="form-control input-sm" placeholder="до" style="margin-top:6px;">
-            </div>
-            <button class="btn btn-primary btn-sm btn-block">Применить</button>
-          </div>
-        </div>
+      <a href="#" class="catalog-cat-card catalog-cat-card--active">
+        <span class="catalog-cat-card__name">Мечевой бой</span>
+        <img src="/images/catalog/Фон2.png" alt="Мечевой бой" class="catalog-cat-card__img">
+      </a>
 
-        <div class="panel panel-default">
-          <div class="panel-heading"><h4 class="panel-title">Категории</h4></div>
-          <ul class="list-group">
-            <li class="list-group-item"><a href="#">Раздел 1</a></li>
-            <li class="list-group-item"><a href="#">Раздел 2</a></li>
-            <li class="list-group-item"><a href="#">Раздел 3</a></li>
-          </ul>
-        </div>
-      </div>
+      <a href="#" class="catalog-cat-card">
+        <span class="catalog-cat-card__name">Бокс</span>
+        <img src="/images/catalog/фон3.png" alt="Бокс" class="catalog-cat-card__img">
+      </a>
 
-      {# Основной контент #}
-      <div id="content" class="{{ content_class }}">
-        <div class="catalog-header">
-          <h1>Каталог товаров</h1>
-          <span class="text-muted">Найдено: 12 товаров</span>
-        </div>
+    </div>
+  </section>
 
-        <div class="row product-grid">
-          {% for product in products %}
-            <div class="col-xs-6 col-sm-4">
-              {% include 'partials/product-card.twig' %}
-            </div>
-          {% endfor %}
-        </div>
+  {# ── Popular subcategories ── #}
+  <section class="catalog-subcats">
+    <h2 class="catalog-section__title">Популярные подкатегории:</h2>
+    <div class="catalog-subcats__list">
+      <a href="#" class="catalog-subcat-tag">Спортивные ножи для метания</a>
+      <a href="#" class="catalog-subcat-tag">Чехлы для спортивных ножей</a>
+      <a href="#" class="catalog-subcat-tag">Аксессуары для спортивного метания ножей</a>
+      <a href="#" class="catalog-subcat-tag">Оборудование для спортивного метания ножей</a>
+      <a href="#" class="catalog-subcat-tag">Боксерские перчатки</a>
+      <a href="#" class="catalog-subcat-tag">Мечи и сабли</a>
+    </div>
+  </section>
 
-        <div class="catalog-pagination">
-          <ul class="pagination">
-            <li class="disabled"><a href="#">&laquo;</a></li>
-            <li class="active"><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">&raquo;</a></li>
-          </ul>
-        </div>
-      </div>
-
-      {# Правая колонка — виджеты #}
-      <div id="column-right" class="col-sm-3">
-        <div class="panel panel-default">
-          <div class="panel-heading"><h4 class="panel-title">Хиты продаж</h4></div>
-          <div class="panel-body">
-            <p><a href="#">Товар А</a></p>
-            <p><a href="#">Товар Б</a></p>
-            <p><a href="#">Товар В</a></p>
-          </div>
-        </div>
-      </div>
-
-    </div>{# /row #}
-  </div>{# /container #}
 </div>
+
+{# ── Bestsellers (shared component) ── #}
+{% include 'components/product-cards.twig' with { title: 'Хиты продаж:' } %}
+
+{# ── New arrivals (shared component) ── #}
+{% include 'components/product-cards.twig' with { title: 'Новинки:' } %}
 
 {% endblock %}

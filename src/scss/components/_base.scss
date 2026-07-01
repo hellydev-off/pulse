@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  font-family: $font-family-base;
+  font-size:   $font-size-base;
+  color:       $c-text;
+  background:  #fff;
+}
+
+a {
+  color: $c-primary;
+  text-decoration: none;
+  &:hover, &:focus { color: darken($c-primary, 10%); text-decoration: none; }
+}
+
+img { max-width: 100%; display: block; }
+
+.main-content { min-height: 400px; }
+
+.svg-icon {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}

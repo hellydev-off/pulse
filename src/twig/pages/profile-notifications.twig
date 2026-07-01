@@ -1,0 +1,287 @@
+{% extends 'layouts/base.twig' %}
+{% block title %}Уведомления — {{ siteName }}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <nav class="breadcrumb-nav">
+    <a href="/">Главная</a><span class="breadcrumb-nav__sep">—</span>
+    <a href="#">Александр</a><span class="breadcrumb-nav__sep">—</span>
+    <span>Уведомления</span>
+  </nav>
+
+  <div class="profile-layout">
+    {% include 'components/profile-sidebar.twig' with { active: 'notifications' } %}
+
+    <div class="profile-content">
+      <div class="profile-notif__header">
+        <h1 class="profile-notif__title">Уведомления</h1>
+        <div class="profile-notif__actions">
+          <button type="button" class="profile-notif__action-btn">Отметить все прочитанным</button>
+          <a href="profile.html?tab=notif-settings" class="profile-notif__action-btn">Настройки
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M6.293 4.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L9.586 9 6.293 5.707a1 1 0 010-1.414z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      {# ─── Notification list ─── #}
+      <div id="notifList">
+
+        {# 1 — смена пароля, непрочитано #}
+        <div class="notif-item notif-item--unread">
+          <div class="notif-item__icon" style="background-image:url(/images/notifications/Иконка.png)"></div>
+          <div class="notif-item__body">
+            <p class="notif-item__text notif-item__text--unread">Был изменен пароль входа в аккаунт!<br>Вторая строка текста уведомления!</p>
+            <p class="notif-item__date"><span class="notif-item__dot"></span> 04 апреля 2026 в 16:08</p>
+          </div>
+        </div>
+
+        {# 2 — смена почты, непрочитано #}
+        <div class="notif-item notif-item--unread">
+          <div class="notif-item__icon" style="background-image:url(/images/notifications/Иконка2.png)"></div>
+          <div class="notif-item__body">
+            <p class="notif-item__text notif-item__text--unread">Была изменнена почта входа в аккаунт!</p>
+            <p class="notif-item__date"><span class="notif-item__dot"></span> 04 апреля 2026 в 14:08</p>
+          </div>
+        </div>
+
+        {# 3 — заказ доставлен #}
+        <div class="notif-item">
+          <div class="notif-item__icon" style="background-image:url(/images/notifications/Заливкацветом1.png)"></div>
+          <div class="notif-item__body">
+            <p class="notif-item__text">Ваш заказ был доставлен!</p>
+            <button type="button" class="notif-item__go-btn">Перейти</button>
+            <p class="notif-item__date">04 апреля 2026 в 12:08</p>
+          </div>
+        </div>
+
+        {# 4 — возврат денег #}
+        <div class="notif-item">
+          <div class="notif-item__icon" style="background-image:url(/images/notifications/Заливкацветом3.png)"></div>
+          <div class="notif-item__body">
+            <p class="notif-item__text">Вернули деньги по заказу</p>
+            <button type="button" class="notif-item__go-btn">Перейти</button>
+            <p class="notif-item__date">04 апреля 2026 в 11:08</p>
+          </div>
+        </div>
+
+        {# 5 — счёт на оплату #}
+        <div class="notif-item">
+          <div class="notif-item__icon" style="background-image:url(/images/notifications/Заливкацветом12.png)"></div>
+          <div class="notif-item__body">
+            <p class="notif-item__text">Выставлен счет на оплату товара, проверьте почту</p>
+            <button type="button" class="notif-item__go-btn">Перейти</button>
+            <p class="notif-item__date">04 апреля 2026 в 10:08</p>
+          </div>
+        </div>
+
+        {# 6 — заказ принят #}
+        <div class="notif-item">
+          <div class="notif-item__icon" style="background-image:url(/images/notifications/Иконка.png)"></div>
+          <div class="notif-item__body">
+            <p class="notif-item__text">Ваш заказ №0221225037-0011 принят в обработку</p>
+            <button type="button" class="notif-item__go-btn">Перейти</button>
+            <p class="notif-item__date">03 апреля 2026 в 18:45</p>
+          </div>
+        </div>
+
+        {# 7 — заказ передан в доставку #}
+        <div class="notif-item">
+          <div class="notif-item__icon" style="background-image:url(/images/notifications/Заливкацветом1.png)"></div>
+          <div class="notif-item__body">
+            <p class="notif-item__text">Заказ №0221225037-0009 передан в доставку</p>
+            <button type="button" class="notif-item__go-btn">Перейти</button>
+            <p class="notif-item__date">03 апреля 2026 в 14:22</p>
+          </div>
+        </div>
+
+        {# 8 — чек готов #}
+        <div class="notif-item">
+          <div class="notif-item__icon" style="background-image:url(/images/notifications/Заливкацветом12.png)"></div>
+          <div class="notif-item__body">
+            <p class="notif-item__text">Электронный чек по заказу готов</p>
+            <button type="button" class="notif-item__go-btn">Перейти</button>
+            <p class="notif-item__date">03 апреля 2026 в 10:00</p>
+          </div>
+        </div>
+
+        {# 9 — скидка #}
+        <div class="notif-item">
+          <div class="notif-item__icon" style="background-image:url(/images/notifications/Иконка2.png)"></div>
+          <div class="notif-item__body">
+            <p class="notif-item__text">Для вас персональная скидка 15% на ножи для метания!</p>
+            <p class="notif-item__date">02 апреля 2026 в 09:30</p>
+          </div>
+        </div>
+
+        {# 10 — возврат средств #}
+        <div class="notif-item">
+          <div class="notif-item__icon" style="background-image:url(/images/notifications/Заливкацветом3.png)"></div>
+          <div class="notif-item__body">
+            <p class="notif-item__text">Возврат средств по заказу №0221225037-0008 успешно обработан</p>
+            <button type="button" class="notif-item__go-btn">Перейти</button>
+            <p class="notif-item__date">01 апреля 2026 в 16:55</p>
+          </div>
+        </div>
+
+        {# 11 — доставлен #}
+        <div class="notif-item">
+          <div class="notif-item__icon" style="background-image:url(/images/notifications/Заливкацветом1.png)"></div>
+          <div class="notif-item__body">
+            <p class="notif-item__text">Ваш заказ №0221225037-0008 был доставлен</p>
+            <button type="button" class="notif-item__go-btn">Перейти</button>
+            <p class="notif-item__date">01 апреля 2026 в 12:10</p>
+          </div>
+        </div>
+
+        {# 12 — чек #}
+        <div class="notif-item">
+          <div class="notif-item__icon" style="background-image:url(/images/notifications/Заливкацветом12.png)"></div>
+          <div class="notif-item__body">
+            <p class="notif-item__text">Новый чек доступен в разделе «Электронные чеки»</p>
+            <button type="button" class="notif-item__go-btn">Перейти</button>
+            <p class="notif-item__date">31 марта 2026 в 11:00</p>
+          </div>
+        </div>
+
+        {# 13 — заказ собирается #}
+        <div class="notif-item">
+          <div class="notif-item__icon" style="background-image:url(/images/notifications/Заливкацветом1.png)"></div>
+          <div class="notif-item__body">
+            <p class="notif-item__text">Заказ №0221225037-0007 собирается на складе</p>
+            <button type="button" class="notif-item__go-btn">Перейти</button>
+            <p class="notif-item__date">30 марта 2026 в 09:15</p>
+          </div>
+        </div>
+
+        {# 14 — акция #}
+        <div class="notif-item">
+          <div class="notif-item__icon" style="background-image:url(/images/notifications/Иконка.png)"></div>
+          <div class="notif-item__body">
+            <p class="notif-item__text">Акция! Скидка 30% на мечи и сабли до 26 апреля</p>
+            <p class="notif-item__date">29 марта 2026 в 10:00</p>
+          </div>
+        </div>
+
+        {# 15 — счёт #}
+        <div class="notif-item">
+          <div class="notif-item__icon" style="background-image:url(/images/notifications/Заливкацветом12.png)"></div>
+          <div class="notif-item__body">
+            <p class="notif-item__text">Выставлен счет на оплату заказа №0221225037-0006</p>
+            <button type="button" class="notif-item__go-btn">Перейти</button>
+            <p class="notif-item__date">28 марта 2026 в 15:30</p>
+          </div>
+        </div>
+
+      </div>{# /notifList #}
+
+      {# ─── Controls ─── #}
+      <div class="profile-load-more">
+        <button type="button" class="profile-load-more__btn" id="notifLoadMore">Загрузить еще</button>
+        <nav class="notif-pagination" id="notifPagination" aria-label="Страницы"></nav>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function ($) {
+  'use strict';
+
+  var PER_PAGE   = 5;
+  var $list      = $('#notifList');
+  var $pagination = $('#notifPagination');
+  var $loadMore  = $('#notifLoadMore');
+  var $items     = $list.children('.notif-item');
+  var total      = $items.length;
+  var pages      = Math.ceil(total / PER_PAGE);
+  var current    = 1;
+  var cumulative = false; // true while in load-more (append) mode
+
+  /* ── SVG arrows ── */
+  var SVG_PREV = '<svg width="7" height="12" viewBox="0 0 8 14" fill="none"><path d="M7 1L1 7l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var SVG_NEXT = '<svg width="7" height="12" viewBox="0 0 8 14" fill="none"><path d="M1 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  /* ── Visible page numbers ── */
+  function pageNums(active, last) {
+    if (last <= 7) return Array.from({ length: last }, function (_, i) { return i + 1; });
+    if (active <= 4)        return [1, 2, 3, 4, 5, '…', last];
+    if (active >= last - 3) return [1, '…', last - 4, last - 3, last - 2, last - 1, last];
+    return [1, '…', active - 1, active, active + 1, '…', last];
+  }
+
+  /* ── Render items ── */
+  function renderItems(page, append) {
+    var from = append ? 0 : (page - 1) * PER_PAGE;
+    var to   = page * PER_PAGE;
+    $items.each(function (i) {
+      $(this).toggle(i >= from && i < to);
+    });
+  }
+
+  /* ── Build pagination ── */
+  function buildPagination(active) {
+    var nums = pageNums(active, pages);
+    var html = '';
+
+    html += '<button class="notif-pagination__item notif-pagination__item--arrow" data-dir="-1" aria-label="Назад">' + SVG_PREV + '</button>';
+
+    nums.forEach(function (p) {
+      if (p === '…') {
+        html += '<span class="notif-pagination__item notif-pagination__item--dots">…</span>';
+      } else {
+        html += '<button class="notif-pagination__item' +
+          (p === active ? ' notif-pagination__item--active' : '') +
+          '" data-pg="' + p + '">' + p + '</button>';
+      }
+    });
+
+    html += '<button class="notif-pagination__item notif-pagination__item--arrow" data-dir="1" aria-label="Вперёд">' + SVG_NEXT + '</button>';
+
+    $pagination.html(html);
+
+    $pagination.find('[data-pg]').on('click', function () {
+      goTo(+$(this).data('pg'), false);
+    });
+
+    $pagination.find('[data-dir]').on('click', function () {
+      var next = current + (+$(this).data('dir'));
+      if (next >= 1 && next <= pages) goTo(next, false);
+    });
+  }
+
+  /* ── Navigate ── */
+  function goTo(page, append) {
+    current    = page;
+    cumulative = append;
+    renderItems(page, append);
+    buildPagination(page);
+    syncLoadMore();
+
+    if (!append) {
+      var top = $list[0].getBoundingClientRect().top + window.pageYOffset - 120;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    }
+  }
+
+  /* ── Load-more button ── */
+  function syncLoadMore() {
+    $loadMore.toggle(current < pages);
+  }
+
+  $loadMore.on('click', function () {
+    if (current < pages) goTo(current + 1, false);
+  });
+
+  /* ── Edge case: single page ── */
+  if (pages <= 1) {
+    $loadMore.hide();
+    return;
+  }
+
+  goTo(1, false);
+
+}(jQuery));
+</script>
+{% endblock %}

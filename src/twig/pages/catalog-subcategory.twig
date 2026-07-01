@@ -1,0 +1,319 @@
+{% extends 'layouts/base.twig' %}
+{% block title %}Спортивные метательные ножи — {{ siteName }}{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <nav class="breadcrumb-nav">
+    <a href="/">Главная</a><span class="breadcrumb-nav__sep">—</span>
+    <a href="catalog.html">Каталог</a><span class="breadcrumb-nav__sep">—</span>
+    <a href="catalog-category.html">Спортивное метание ножа</a><span class="breadcrumb-nav__sep">—</span>
+    <span>Спортивные метательные ножи</span>
+  </nav>
+
+  <h1 class="catalog-section__title" style="font-size:26px; margin-bottom:20px;">Спортивные метательные ножи</h1>
+
+  {# ── Filter bar (div-обёртка, без вложенных label) ── #}
+  <div class="filter-bar">
+
+    <div class="filter-toggle-wrap">
+      <input type="checkbox" id="filterSale" class="filter-toggle-wrap__input">
+      <label for="filterSale" class="filter-toggle-wrap__track">
+        <span class="filter-toggle-wrap__knob"></span>
+      </label>
+      <label for="filterSale" class="filter-toggle-wrap__text">Акция</label>
+    </div>
+
+    <button type="button" class="filter-btn">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M4 8h8M6 12h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      По популярности
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4.293 6.293a1 1 0 011.414 0L8 8.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"/></svg>
+    </button>
+
+    <button type="button" class="filter-btn">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 4h14M3 8h10M5 12h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Все фильтры
+    </button>
+
+    <button type="button" class="filter-btn">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1v14M3 6l5-5 5 5M3 10l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Цена
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M4.293 6.293a1 1 0 011.414 0L8 8.586l2.293-2.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"/></svg>
+    </button>
+
+  </div>
+
+  {# ── Product grid (16 карточек → 2 страницы по 8) ── #}
+  <div class="subcat-products-grid" id="subcatGrid">
+
+    <div class="product-card" data-id="kizlyar">
+      <a href="product.html?id=kizlyar" class="product-card__image-wrap"><img src="/images/catalog/карт1.png" alt="" class="product-card__img"><span class="product-card__badge">-20 %</span></a>
+      <div class="product-card__body">
+        <div class="product-card__price-row"><span class="product-card__price">6 000 Р</span><span class="product-card__price-old">7 500 Р</span></div>
+        <a href="product.html?id=kizlyar" class="product-card__name">Ножи для метания СМН+ (Кизляр)</a>
+        <span class="product-card__article">Артикул: H8A7C9</span>
+        <button type="button" class="product-card__btn product-card__btn--primary" data-id="kizlyar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="saro">
+      <a href="product.html?id=saro" class="product-card__image-wrap"><img src="/images/catalog/карт1.png" alt="" class="product-card__img"><span class="product-card__badge product-card__badge--new">Новинка</span></a>
+      <div class="product-card__body">
+        <div class="product-card__price-row"><span class="product-card__price product-card__price--dark">7 000 Р</span></div>
+        <a href="product.html?id=saro" class="product-card__name">Ножи для метания СМН+ (Саро)</a>
+        <span class="product-card__article">Артикул: OIB1UW</span>
+        <div class="product-card__unavailable-row">
+          <button type="button" class="product-card__btn product-card__btn--disabled" disabled>Нет в наличии</button>
+          <button type="button" class="product-card__notify-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="saro">
+      <a href="product.html?id=saro" class="product-card__image-wrap"><img src="/images/catalog/карт1.png" alt="" class="product-card__img"></a>
+      <div class="product-card__body">
+        <div class="product-card__price-row"><span class="product-card__price product-card__price--dark">7 000 Р</span></div>
+        <a href="product.html?id=saro" class="product-card__name">Ножи для метания СМН+ (Саро)</a>
+        <span class="product-card__article">Артикул: JUZ9BJ</span>
+        <button type="button" class="product-card__btn product-card__btn--primary" data-id="saro"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="target">
+      <a href="product.html?id=target" class="product-card__image-wrap"><img src="/images/catalog/карт3.png" alt="" class="product-card__img"><span class="product-card__badge">-20 %</span></a>
+      <div class="product-card__body">
+        <div class="product-card__price-row"><span class="product-card__price">5 000 Р</span><span class="product-card__price-old">6 250 Р</span></div>
+        <a href="product.html?id=target" class="product-card__name">Мишень для метания М1 (36х32 ...</a>
+        <span class="product-card__article">Артикул: I5Y91U</span>
+        <button type="button" class="product-card__btn product-card__btn--primary" data-id="target"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="kizlyar">
+      <a href="product.html?id=kizlyar" class="product-card__image-wrap"><img src="/images/catalog/карт1.png" alt="" class="product-card__img"><span class="product-card__badge">-20 %</span></a>
+      <div class="product-card__body">
+        <div class="product-card__price-row"><span class="product-card__price">6 000 Р</span><span class="product-card__price-old">7 500 Р</span></div>
+        <a href="product.html?id=kizlyar" class="product-card__name">Ножи для метания СМН+ (Кизляр)</a>
+        <span class="product-card__article">Артикул: H8A7C9</span>
+        <button type="button" class="product-card__btn product-card__btn--primary" data-id="kizlyar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="saro">
+      <a href="product.html?id=saro" class="product-card__image-wrap"><img src="/images/catalog/карт1.png" alt="" class="product-card__img"></a>
+      <div class="product-card__body">
+        <div class="product-card__price-row"><span class="product-card__price product-card__price--dark">7 000 Р</span></div>
+        <a href="product.html?id=saro" class="product-card__name">Ножи для метания СМН+ (Саро)</a>
+        <span class="product-card__article">Артикул: OIB1UW</span>
+        <div class="product-card__unavailable-row">
+          <button type="button" class="product-card__btn product-card__btn--disabled" disabled>Нет в наличии</button>
+          <button type="button" class="product-card__notify-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="saro">
+      <a href="product.html?id=saro" class="product-card__image-wrap"><img src="/images/catalog/карт1.png" alt="" class="product-card__img"></a>
+      <div class="product-card__body">
+        <div class="product-card__price-row"><span class="product-card__price product-card__price--dark">7 000 Р</span></div>
+        <a href="product.html?id=saro" class="product-card__name">Ножи для метания СМН+ (Саро)</a>
+        <span class="product-card__article">Артикул: JUZ9BJ</span>
+        <button type="button" class="product-card__btn product-card__btn--primary" data-id="saro"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="target">
+      <a href="product.html?id=target" class="product-card__image-wrap"><img src="/images/catalog/карт3.png" alt="" class="product-card__img"><span class="product-card__badge">-20 %</span></a>
+      <div class="product-card__body">
+        <div class="product-card__price-row"><span class="product-card__price">5 000 Р</span><span class="product-card__price-old">6 250 Р</span></div>
+        <a href="product.html?id=target" class="product-card__name">Мишень для метания М1 (36х32 ...</a>
+        <span class="product-card__article">Артикул: I5Y91U</span>
+        <button type="button" class="product-card__btn product-card__btn--primary" data-id="target"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>В корзину</button>
+      </div>
+    </div>
+
+    {# === Страница 2 === #}
+    <div class="product-card" data-id="kizlyar">
+      <a href="product.html?id=kizlyar" class="product-card__image-wrap"><img src="/images/catalog/карт1.png" alt="" class="product-card__img"><span class="product-card__badge">-20 %</span></a>
+      <div class="product-card__body">
+        <div class="product-card__price-row"><span class="product-card__price">6 000 Р</span><span class="product-card__price-old">7 500 Р</span></div>
+        <a href="product.html?id=kizlyar" class="product-card__name">Ножи для метания СМН+ (Кизляр)</a>
+        <span class="product-card__article">Артикул: H8A7C9</span>
+        <button type="button" class="product-card__btn product-card__btn--primary" data-id="kizlyar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="target">
+      <a href="product.html?id=target" class="product-card__image-wrap"><img src="/images/catalog/карт3.png" alt="" class="product-card__img"></a>
+      <div class="product-card__body">
+        <div class="product-card__price-row"><span class="product-card__price product-card__price--dark">5 000 Р</span></div>
+        <a href="product.html?id=target" class="product-card__name">Мишень для метания М1 (36х32 ...</a>
+        <span class="product-card__article">Артикул: I5Y91U</span>
+        <button type="button" class="product-card__btn product-card__btn--primary" data-id="target"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="saro">
+      <a href="product.html?id=saro" class="product-card__image-wrap"><img src="/images/catalog/карт1.png" alt="" class="product-card__img"><span class="product-card__badge">-20 %</span></a>
+      <div class="product-card__body">
+        <div class="product-card__price-row"><span class="product-card__price">7 000 Р</span><span class="product-card__price-old">8 500 Р</span></div>
+        <a href="product.html?id=saro" class="product-card__name">Ножи для метания СМН+ (Саро)</a>
+        <span class="product-card__article">Артикул: JUZ9BJ</span>
+        <button type="button" class="product-card__btn product-card__btn--primary" data-id="saro"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="multicam">
+      <a href="product.html?id=multicam" class="product-card__image-wrap"><img src="/images/catalog/карт2.png" alt="" class="product-card__img"></a>
+      <div class="product-card__body">
+        <div class="product-card__price-row"><span class="product-card__price product-card__price--dark">900 Р</span></div>
+        <a href="product.html?id=multicam" class="product-card__name">Чехол «МУЛЬТИКАМ»</a>
+        <span class="product-card__article">Артикул: OIB1UW</span>
+        <div class="product-card__unavailable-row">
+          <button type="button" class="product-card__btn product-card__btn--disabled" disabled>Нет в наличии</button>
+          <button type="button" class="product-card__notify-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="kizlyar">
+      <a href="product.html?id=kizlyar" class="product-card__image-wrap"><img src="/images/catalog/карт1.png" alt="" class="product-card__img"></a>
+      <div class="product-card__body">
+        <div class="product-card__price-row"><span class="product-card__price product-card__price--dark">6 000 Р</span></div>
+        <a href="product.html?id=kizlyar" class="product-card__name">Ножи для метания СМН+ (Кизляр)</a>
+        <span class="product-card__article">Артикул: H8A7C9</span>
+        <button type="button" class="product-card__btn product-card__btn--primary" data-id="kizlyar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="target">
+      <a href="product.html?id=target" class="product-card__image-wrap"><img src="/images/catalog/карт3.png" alt="" class="product-card__img"><span class="product-card__badge product-card__badge--new">Новинка</span></a>
+      <div class="product-card__body">
+        <div class="product-card__price-row"><span class="product-card__price product-card__price--dark">5 000 Р</span></div>
+        <a href="product.html?id=target" class="product-card__name">Мишень для метания М1 (36х32 ...</a>
+        <span class="product-card__article">Артикул: I5Y91U</span>
+        <button type="button" class="product-card__btn product-card__btn--primary" data-id="target"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="saro">
+      <a href="product.html?id=saro" class="product-card__image-wrap"><img src="/images/catalog/карт1.png" alt="" class="product-card__img"></a>
+      <div class="product-card__body">
+        <div class="product-card__price-row"><span class="product-card__price product-card__price--dark">7 000 Р</span></div>
+        <a href="product.html?id=saro" class="product-card__name">Ножи для метания СМН+ (Саро)</a>
+        <span class="product-card__article">Артикул: JUZ9BJ</span>
+        <button type="button" class="product-card__btn product-card__btn--primary" data-id="saro"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>В корзину</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-id="kizlyar">
+      <a href="product.html?id=kizlyar" class="product-card__image-wrap"><img src="/images/catalog/карт1.png" alt="" class="product-card__img"><span class="product-card__badge">-20 %</span></a>
+      <div class="product-card__body">
+        <div class="product-card__price-row"><span class="product-card__price">6 000 Р</span><span class="product-card__price-old">7 500 Р</span></div>
+        <a href="product.html?id=kizlyar" class="product-card__name">Ножи для метания СМН+ (Кизляр)</a>
+        <span class="product-card__article">Артикул: H8A7C9</span>
+        <button type="button" class="product-card__btn product-card__btn--primary" data-id="kizlyar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>В корзину</button>
+      </div>
+    </div>
+
+  </div>
+
+  {# ── Bottom: load more + pagination ── #}
+  <div class="subcat-bottom">
+    <button type="button" class="subcat-bottom__load-btn" id="subcatLoadMore">Загрузить еще</button>
+    <nav class="subcat-pagination" id="subcatPagination" aria-label="Страницы"></nav>
+  </div>
+
+</div>
+
+{# ── Related products ── #}
+{% include 'components/product-cards.twig' with { title: 'С этими товарами также покупают:' } %}
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function ($) {
+  'use strict';
+
+  var PER_PAGE = 8;
+  var $grid    = $('#subcatGrid');
+  var $pag     = $('#subcatPagination');
+  var $more    = $('#subcatLoadMore');
+  var $items   = $grid.children('.product-card');
+  var total    = $items.length;
+  var pages    = Math.ceil(total / PER_PAGE);
+  var current  = 1;
+
+  var SVG_PREV = '<svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M6 1L1 6l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var SVG_NEXT = '<svg width="7" height="12" viewBox="0 0 7 12" fill="none"><path d="M1 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  function pageNums(active, last) {
+    if (last <= 7) return Array.from({ length: last }, function (_, i) { return i + 1; });
+    if (active <= 4)        return [1, 2, 3, 4, 5, '…', last];
+    if (active >= last - 3) return [1, '…', last - 4, last - 3, last - 2, last - 1, last];
+    return [1, '…', active - 1, active, active + 1, '…', last];
+  }
+
+  function renderItems(page) {
+    var from = (page - 1) * PER_PAGE;
+    var to   = page * PER_PAGE;
+    $items.each(function (i) {
+      $(this).toggle(i >= from && i < to);
+    });
+  }
+
+  function buildPagination(active) {
+    var nums = pageNums(active, pages);
+    var html = '';
+
+    html += '<button class="subcat-pagination__item subcat-pagination__item--arrow" data-dir="-1">' + SVG_PREV + '</button>';
+    nums.forEach(function (p) {
+      if (p === '…') {
+        html += '<span class="subcat-pagination__item subcat-pagination__item--dots">…</span>';
+      } else {
+        html += '<button class="subcat-pagination__item' +
+          (p === active ? ' subcat-pagination__item--active' : '') +
+          '" data-pg="' + p + '">' + p + '</button>';
+      }
+    });
+    html += '<button class="subcat-pagination__item subcat-pagination__item--arrow" data-dir="1">' + SVG_NEXT + '</button>';
+
+    $pag.html(html);
+
+    $pag.find('[data-pg]').on('click', function () {
+      goTo(+$(this).data('pg'));
+    });
+    $pag.find('[data-dir]').on('click', function () {
+      var next = current + (+$(this).data('dir'));
+      if (next >= 1 && next <= pages) goTo(next);
+    });
+  }
+
+  function goTo(page) {
+    current = page;
+    renderItems(page);
+    buildPagination(page);
+    $more.toggle(current < pages);
+    // scroll to grid top
+    var top = $grid[0].getBoundingClientRect().top + window.pageYOffset - 120;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+  }
+
+  // Load more — переход на следующую страницу
+  $more.on('click', function () {
+    if (current < pages) goTo(current + 1);
+  });
+
+  // Init
+  if (pages <= 1) { $more.hide(); }
+  goTo(1);
+
+  // Фильтр-переключатель «Акция» — добавляет класс на обёртку
+  $('#filterSale').on('change', function () {
+    $(this).closest('.filter-toggle-wrap').toggleClass('is-checked', this.checked);
+  });
+
+}(jQuery));
+</script>
+{% endblock %}

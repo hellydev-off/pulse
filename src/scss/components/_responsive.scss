@@ -1,774 +1,434 @@
 // ══════════════════════════════════════════════════════════════════════════════
-// RESPONSIVE LAYER
-// Centralised breakpoint overrides for all custom (non-Bootstrap) components.
-// Layout-only (grid/flex/size/spacing/font-size) — no colour variables here,
-// so it stays independent of the per-component $navy/$cream definitions.
-//
-// Breakpoints (aligned with Bootstrap 3):
-//   1199px ↓  laptop / md
-//    991px ↓  tablet / sm  (mobile menu kicks in here)
-//    767px ↓  phone  / xs
-//    575px ↓  small phone
+//  RESPONSIVE — loaded last so its rules win. Breakpoints: 991 / 767 / 479
 // ══════════════════════════════════════════════════════════════════════════════
 
-// ─── md and down (≤1199px) ────────────────────────────────────────────────────
-@media (max-width: 1199px) {
-  // Index — big display type
-  .section-title,
-  .page-title,
-  .about-center__title,
-  .doc-banner__title,
-  .dp-hero__name,
-  .dp-section__title,
-  .enc-title {
-    font-size: 34px;
-  }
+// ─── Base (desktop): hide mobile-only chrome ──────────────────────────────────
+.header-burger,
+.header-search-mobile,
+.mobile-menu,
+.mobile-menu-overlay,
+.profile-menu-trigger,
+.profile-sidebar-overlay { display: none; }
 
-  .stat-item__number {
-    font-size: 130px;
-  }
-  .stat-item--2 {
-    margin-left: 220px;
-  }
-  .stat-item--3 {
-    margin-left: 460px;
-  }
+// Burger button
+.header-burger {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  padding: 0;
 
-  // Reduce padded wrapper on laptops
-  .cont-border {
-    padding: 28px;
-    border-radius: 48px;
-  }
-
-  // Hero banner
-  .hero-banner__price-new {
-    font-size: 42px;
-  }
-  .hero-banner__title {
-    font-size: 28px;
-  }
-
-  // Specializations 4 → 3 cols
-  .spec-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  // ── Doc-banner: hide decorative images so the card doesn't overflow ───────────
-  .doc-banner__images {
-    display: none;
-  }
-  .doc-banner__link {
-    font-size: 18px;
-  }
-  .doc-banner__content {
-    padding: 32px 40px;
-  }
-
-  // Contact CTA phone: row layout compresses text column at ~950–1100px
-  .contact-cta__phone {
-    font-size: 26px;
-  }
-}
-
-// ─── Tablet and down (≤991px) ─────────────────────────────────────────────────
-@media (max-width: 991px) {
-  // ── Header: swap desktop nav for burger ──────────────────────────────────────
-  .header-nav {
-    display: none;
-  }
-  .header-burger {
-    display: flex;
-  }
-
-  // Mobile menu panel lives off-canvas here; `.is-open` slides it in (JS adds the class)
-  .mobile-menu {
-    display: flex;
-  }
-
-  // Topbar: keep contacts, drop the heavy action buttons (they live in burger menu)
-  .topbar__actions {
-    display: none;
-  }
-  .topbar__contacts {
-    gap: 18px;
-    flex-wrap: wrap;
-  }
-
-  // ── Section paddings ─────────────────────────────────────────────────────────
-  .section {
-    padding: 40px 0;
-  }
-
-  // ── Index: hero banner stacks ────────────────────────────────────────────────
-  .hero-banner__inner {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-banner__left {
-    width: 280px;
-    height: 300px;
-    margin-right: 0;
-    margin-bottom: 24px;
-  }
-  .hero-banner__price {
-    justify-content: center;
-  }
-
-  // ── About center: reset the staircase offsets ────────────────────────────────
-  .about-center {
-    min-height: 0;
-    padding: 40px 0;
-    margin-bottom: 40px;
-  }
-  .about-center__bg-text,
-  .about-center__stethoscope,
-  .about-center__mask {
-    display: none;
-  }
-  .stat-item {
-    margin-left: 0 !important;
-  }
-  .stat-item__number {
-    font-size: 96px;
-  }
-
-  // Reduce padded wrapper on tablet
-  .cont-border {
-    padding: 20px;
-    border-radius: 36px;
-  }
-
-  // ── About text + slider ──────────────────────────────────────────────────────
-  .about-text-section__inner {
-    flex-direction: column;
-    gap: 32px;
-  }
-  .about-text-section__slider-wrap {
-    width: 100%;
-  }
-
-  // ── Clinic legal ─────────────────────────────────────────────────────────────
-  .clinic-legal__inner {
-    flex-direction: column;
-    gap: 28px;
-  }
-  .clinic-legal__photo {
-    width: 100%;
-  }
-
-  // ── Doc banner ───────────────────────────────────────────────────────────────
-  .doc-banner__card {
-    flex-direction: column;
-  }
-  .doc-banner__content {
-    padding: 28px 24px;
-  }
-  .doc-banner__images {
-    display: none;
-  }
-  .doc-banner__text-cont {
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-
-  // ── Control authorities 3 → 1 ────────────────────────────────────────────────
-  .ctrl-auth__details {
-    grid-template-columns: 1fr;
-  }
-
-  // ── Specializations 3 → 2 ────────────────────────────────────────────────────
-  .spec-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  // ── Doctors grids ────────────────────────────────────────────────────────────
-  .doctors-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .featured-doctors__grid {
-    grid-template-columns: 1fr;
-  }
-
-  // ── Encyclopedia ─────────────────────────────────────────────────────────────
-  .enc-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .enc-filters {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  // ── Doctor profile hero stacks ───────────────────────────────────────────────
-  .dp-hero {
-    flex-direction: column;
-    gap: 28px;
-  }
-  .dp-hero__photo {
-    width: 240px;
-  }
-  .dp-hero__meta {
-    gap: 28px;
-    flex-wrap: wrap;
-  }
-
-  // ── Contact CTA stacks ───────────────────────────────────────────────────────
-  .contact-cta {
-    margin-bottom: 40px;
-  }
-  .contact-cta__inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 24px;
-  }
-  .contact-cta__image {
-    align-self: center;
-  }
-  .contact-cta__actions {
-    width: 100%;
-  }
-  .contact-cta__actions a {
-    min-width: 0;
-    padding: 16px 24px;
-  }
-
-  // ── Footer ───────────────────────────────────────────────────────────────────
-  .site-footer__top-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 18px;
-  }
-  .site-footer__services-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px 20px;
-  }
-  .site-footer__nav {
-    flex-wrap: wrap;
-    gap: 12px 20px;
-    justify-content: flex-start;
-  }
-  .site-footer__nav a {
-    font-size: 18px;
-  }
-  .site-footer__bottom-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  // ── Gynecology ───────────────────────────────────────────────────────────────
-  .gyno-intro__inner {
-    grid-template-columns: 1fr;
-  }
-  .gyno-reasons__grid,
-  .gyno-care__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .gyno-steps {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  // ── Ведение беременности ─────────────────────────────────────────────────────
-  .vb-doctors-row {
-    flex-wrap: wrap;
-  }
-  .vb-doctors-row--3 .vb-doctor-card {
-    flex: 1 1 calc(50% - 10px);
-  }
-  .vb-doctors-row--2 .vb-doctor-card {
-    flex: 1 1 calc(50% - 10px);
-  }
-  .vb-specialists-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .vb-specialist-card__photo {
-    width: 150px;
-    height: 150px;
-  }
-  .vb-benefits-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .vb-benefits-grid--bottom {
-    max-width: 100%;
-  }
-}
-
-// ─── Phone and down (≤767px) ──────────────────────────────────────────────────
-@media (max-width: 767px) {
-  // ── Header: shrink logo so it doesn't crowd the burger button ────────────────
-  .header-main {
-    padding: 12px 0;
-  }
-  .header-logo__icon {
-    max-height: 44px;
-    width: auto;
-  }
-
-  // Breadcrumb: allow flex items to wrap so long paths don't compress mid-word
-  .vb-breadcrumb {
-    flex-wrap: wrap;
-    gap: 3px 5px;
-  }
-
-  // Display type
-  .section-title,
-  .page-title,
-  .about-center__title,
-  .doc-banner__title,
-  .dp-hero__name,
-  .dp-section__title,
-  .enc-title,
-  .reviews-page-header h1 {
-    font-size: 26px;
-  }
-
-  .section-header {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  // Section-header right side: spread link & nav-buttons across full row
-  .section-header__right {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  // Hero banner price
-  .hero-banner__price-new {
-    font-size: 34px;
-  }
-  .hero-banner__price-old {
-    font-size: 22px;
-  }
-
-  // ── Doctors filter: stack search + specialty vertically ───────────────────────
-  .doctors-filter__inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .doctors-filter__sep {
-    width: 100%;
-    height: 1.5px;
-  }
-  .doctors-filter__specialty {
-    width: 100%;
-  }
-
-  // About center — stats in a row
-  .about-center {
-    padding: 28px 0;
-  }
-  .about-center__title {
-    font-size: 32px;
-    margin-bottom: 24px;
-  }
-  .about-center__stats {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 0;
-  }
-  .stat-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    margin-bottom: 0;
-  }
-  .stat-item__number {
-    font-size: 96px;
-    letter-spacing: -3px;
-  }
-  .stat-item__label {
-    font-size: 13px;
-  }
-
-  // CTA row 3 → 1
-  .cta-row__inner {
-    grid-template-columns: 1fr;
-  }
-
-  // Reduce padded wrapper on phones
-  .cont-border {
-    padding: 16px;
-    border-radius: 24px;
-  }
-
-  // New doctor card stacks; use center-crop so the face is fully visible
-  .new-doctor-card {
-    flex-direction: column;
-  }
-  .new-doctor-card__photo {
-    width: 100%;
-    height: 260px;
-    img {
-      object-position: top center;
-    }
-  }
-
-  // Children banner — smaller title and button on mobile
-  .children-banner__title {
-    font-size: 18px;
-    letter-spacing: 1.5px;
-    margin-bottom: 0;
-  }
-  .children-banner__link {
-    right: 16px;
-    bottom: 16px;
-    padding: 8px 16px;
-    font-size: 13px;
-  }
-
-  // Specializations → 1
-  .spec-grid {
-    grid-template-columns: 1fr;
-  }
-
-  // Doctors grid 3 → 2
-  .doctors-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  // Encyclopedia → 1 already 2; keep 2 for cards, drop only on small
-  // Reviews / news list items stack
-  .news-list-item {
-    flex-direction: column;
-    gap: 12px;
-  }
-  .news-list-item__thumb {
-    width: 100%;
-    height: 180px;
-  }
-
-  .reviews-page-header {
-    flex-direction: column;
-  }
-  .reviews-rating-bar {
-    font-size: 18px;
-    gap: 8px;
-    flex-wrap: wrap;
-
-    &__count {
-      font-size: 15px;
-    }
-  }
-  .review-card__name {
-    font-size: 24px;
-  }
-  .review-card__text,
-  .review-card__doctor {
-    font-size: 16px;
-  }
-
-  // Doctor profile
-  .dp-hero__photo {
-    width: 100%;
-    max-width: 280px;
-  }
-  .dp-diplomas__row {
-    flex-direction: column;
-    gap: 6px;
-  }
-  .dp-diplomas__text {
-    font-size: 18px;
-  }
-  .dp-hero__btn,
-  .dp-reviews__btn {
+  span {
     display: block;
-    text-align: center;
-    padding: 16px 24px;
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+    background: $c-dark;
+    transition: transform .25s, opacity .2s;
   }
 
-  // Buttons that were oversized
-  .btn-leave-review {
-    font-size: 18px;
-    padding: 12px 24px;
-    margin-bottom: 16px;
-  }
+  &.is-open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  &.is-open span:nth-child(2) { opacity: 0; }
+  &.is-open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+}
 
-  // Reviews list-footer: stack button + pagination vertically
-  .list-footer {
-    flex-direction: column;
+// Mobile search icon button
+.header-search-mobile {
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: $c-muted;
+  flex-shrink: 0;
+
+  &:hover { color: $c-primary; }
+}
+
+// ─── Mobile drawer menu ───────────────────────────────────────────────────────
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .45);
+  z-index: 1090;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .25s, visibility .25s;
+
+  &.is-open { opacity: 1; visibility: visible; }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  max-width: 84vw;
+  background: #fff;
+  z-index: 1100;
+  padding: 24px 20px;
+  transform: translateX(-100%);
+  transition: transform .28s ease;
+  overflow-y: auto;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, .12);
+
+  &.is-open { transform: translateX(0); }
+
+  &__catalog {
+    display: inline-flex;
     align-items: center;
-    gap: 20px;
-    padding: 28px 0 40px;
-  }
-  .btn-show-more {
+    gap: 8px;
     width: 100%;
-    text-align: center;
-  }
-
-  // Footer services 2 → 1
-  .site-footer__services-grid {
-    grid-template-columns: 1fr;
-  }
-
-  // Footer contacts: let the second button wrap instead of overflowing the screen
-  .site-footer__contacts {
-    width: 100%;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  // Gynecology
-  .gyno-reasons__grid,
-  .gyno-care__grid,
-  .gyno-offer__grid,
-  .gyno-steps {
-    grid-template-columns: 1fr;
-  }
-
-  // ── Gynecology: CTA buttons + steps fix ──────────────────────────────────────
-  .gyno-faq__actions {
-    flex-direction: column;
-  }
-  .gyno-prices__cta {
-    grid-template-columns: 1fr;
-  }
-  // Remove desktop-only overlap trick; reduce padding for narrow screens
-  .gyno-step {
-    margin-left: 0;
-    padding: 20px 16px;
-  }
-  .gyno-section-title {
-    font-size: 22px;
-  }
-  // Alert box: smaller icon + tighter padding so text isn't squished on narrow screens
-  .gyno-alert {
-    padding: 16px 20px;
-    gap: 14px;
-  }
-  .gyno-alert__icon {
-    font-size: 40px;
-  }
-  .gyno-alert p {
-    font-size: 14px;
-  }
-
-  // ── VB page ───────────────────────────────────────────────────────────────────
-  // Hero banner CTA: text overlaps baked-in image text on narrow screens —
-  // hide the label, show only the phone button tucked to the bottom-right corner
-  .vb-hero__cta {
-    left: auto;
-    right: 16px;
-    bottom: 16px;
-    padding: 6px;
-    span {
-      display: none;
-    }
-  }
-  // Screening slider overlays: same principle
-  .vb-screening-slider__overlay {
-    bottom: 8px;
-    right: 8px;
-  }
-  .vb-screening-slider__overlay-btn {
-    font-size: 12px;
-    padding: 8px 14px;
-  }
-  .vb-screening-slider__overlay-cta {
-    padding: 6px;
-    span {
-      display: none;
-    }
-  }
-  // Contact CTA phone number
-  .contact-cta__phone {
-    font-size: 22px;
-  }
-
-  // Ведение беременности
-  .vb-specialists-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .vb-specialist-card__photo {
-    width: 150px;
-    height: 150px;
-  }
-  .vb-doctors-row--3 .vb-doctor-card,
-  .vb-doctors-row--2 .vb-doctor-card {
-    flex: 1 1 100%;
-  }
-  .vb-section-title,
-  .vb-title {
-    font-size: 24px;
-  }
-
-  // Reviews slider
-  .reviews-slider {
-    margin-bottom: 24px;
-  }
-  .review-card__toggle {
-    display: block;
-  }
-  .reviews-slider__actions {
-    flex-direction: column;
-  }
-  .reviews-slider__btn {
-    min-width: 0;
-    width: 100%;
-  }
-  .reviews-slider__wrap {
-    display: block;
-    position: relative;
-    padding-bottom: 64px;
-    margin-bottom: 16px;
-  }
-  .reviews-slider__clip {
-    padding: 0;
-    margin: 0;
-    overflow: visible;
-  }
-  .reviews-slider__prev,
-  .reviews-slider__next {
-    position: absolute;
-    bottom: 0;
-  }
-  .reviews-slider__prev {
-    left: calc(50% - 52px);
-  }
-  .reviews-slider__next {
-    left: calc(50% + 8px);
-  }
-  .review-card {
-    padding: 20px;
-  }
-}
-
-// ─── Small phone (≤575px) ─────────────────────────────────────────────────────
-@media (max-width: 575px) {
-  .header-logo__icon {
-    max-height: 36px;
-  }
-
-  .reviews-rating-bar {
-    font-size: 16px;
-    gap: 6px;
-
-    &__count {
-      font-size: 13px;
-      width: 100%;
-    }
-  }
-  .btn-leave-review {
-    width: 100%;
-    text-align: center;
-    font-size: 16px;
-    padding: 11px 20px;
-  }
-
-  // Children banner — icon-only button on tiny screens
-  .children-banner__link {
-    padding: 8px 10px;
-    gap: 0;
-  }
-  .children-banner__link-text {
-    display: none;
-  }
-
-  .section-title,
-  .page-title {
-    font-size: 22px;
-  }
-
-  .stat-item__number {
-    font-size: 64px;
-    letter-spacing: -2px;
-  }
-  .stat-item__label {
-    font-size: 11px;
-  }
-
-  // Minimal padding on tiny phones
-  .cont-border {
+    justify-content: center;
     padding: 12px;
-    border-radius: 16px;
-  }
-  .about-center {
-    padding: 20px 0;
+    background: $c-primary;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 20px;
+
+    .svg-icon { color: #fff; }
   }
 
-  // Doctors grid 2 → 1
-  .doctors-grid {
-    grid-template-columns: 1fr;
+  &__nav {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+
+    li { border-bottom: 1px solid $c-border; }
+
+    a {
+      display: block;
+      padding: 13px 4px;
+      font-size: 15px;
+      color: $c-dark;
+      text-decoration: none;
+
+      &:hover { color: $c-primary; }
+    }
   }
 
-  // Encyclopedia 2 → 1
-  .enc-grid {
-    grid-template-columns: 1fr;
-  }
-
-  // Specialists (ведение) 2 → 2 (keep 2-col so cards stay visible)
-  .vb-specialists-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .vb-specialist-card__photo {
-    width: 130px;
-    height: 130px;
-  }
-  .vb-benefits-grid {
-    grid-template-columns: 1fr;
-  }
-  .vb-benefit-item__text {
-    max-width: 100%;
-  }
-
-  // Partner cards smaller
-  .partner-card {
-    height: 120px;
-    padding: 18px;
-  }
-
-  // Footer contacts stack full-width on small phones
-  .site-footer__contacts {
+  &__contacts {
+    display: flex;
     flex-direction: column;
-    align-items: stretch;
-  }
-  .site-footer__contact-btn {
-    justify-content: center;
+    gap: 10px;
   }
 
-  // Hide swiper side arrows that hang outside container on tiny screens
-  .care-swiper-prev {
-    left: 4px;
-  }
-  .care-swiper-next {
-    right: 4px;
-  }
+  &__contact {
+    font-size: 14px;
+    color: $c-dark;
+    text-decoration: none;
+    font-weight: 600;
 
-  // Pagination: reduce item size so 8 buttons fit in ~345px container
-  .pg {
-    gap: 4px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .pg__item {
-    min-width: 34px;
-    height: 34px;
-    font-size: 13px;
-  }
-  .list-footer {
-    padding: 20px 0 32px;
-    gap: 16px;
-  }
-
-  .contact-cta__phone {
-    font-size: 18px;
+    &--muted { color: $c-muted; font-weight: 400; font-size: 13px; }
   }
 }
 
-// ─── Single-slide disease card (Swiper shows 1 slide below 480px) ─────────────
-@media (max-width: 479px) {
-  // Change portrait aspect-ratio to landscape so card isn't 460px tall
-  .gyno-placeholder--disease {
-    aspect-ratio: 3/2;
+body.menu-open { overflow: hidden; }
+
+// ══════════════════════════════════════════════════════════════════════════════
+//  TABLET  ≤ 991px
+// ══════════════════════════════════════════════════════════════════════════════
+@media (max-width: 991px) {
+  .header-top__nav { display: none; }
+  .footer-callback__text { display: none; }
+  .footer-callback__form { flex: 1; }
+  .footer-callback__input { flex: 1; width: auto; }
+
+  // Cart / checkout / profile → single column
+  .cart-layout { flex-direction: column; }
+  .cart-summary { width: 100%; flex: none; position: static; }
+
+  .checkout-layout { flex-direction: column; }
+  .checkout-sidebar { width: 100%; flex: none; position: static; }
+
+  .order-detail { grid-template-columns: 1fr; }
+  .order-detail__sidebar { position: static; }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+//  MOBILE  ≤ 767px
+// ══════════════════════════════════════════════════════════════════════════════
+@media (max-width: 767px) {
+
+  // ── Header ──
+  .header-top { display: none; }
+  .header-main { height: 60px; margin-top: 8px; }
+  .header-main__inner { gap: 6px; }
+
+  .header-burger { display: flex; }
+  .header-logo { margin-right: auto; }
+  .header-logo svg { height: 34px; width: auto; }
+
+  .catalog-btn { display: none; }
+  .header-search { display: none; }
+  .header-search-mobile { display: flex; }
+
+  // drawers need to render (visibility/transform handle show/hide)
+  .mobile-menu,
+  .mobile-menu-overlay { display: block; }
+
+  .header-actions { gap: 2px; }
+  .header-action { padding: 6px 4px; }
+  .header-action span { display: none; }
+  .header-action__badge { top: -2px; right: 0; }
+
+  // ── Footer accordion ──
+  .footer-callback__row { flex-wrap: wrap; gap: 16px; }
+  .footer-callback__logo { display: none; }
+  .footer-callback__input {
+    width: 100%;
+    border-radius: 10px;
   }
 
-  // Pagination: 8 items × 30px + 7 × 3px = 261px → fits ~288px container
-  .pg {
-    gap: 3px;
+  .footer-nav .row > div:not(:last-child) { margin-bottom: 4px; }
+
+  .footer-nav__title {
+    position: relative;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    padding: 12px 24px 12px 0;
+    margin: 0;
+    border-bottom: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      width: 9px;
+      height: 9px;
+      border-right: 2px solid $c-muted;
+      border-bottom: 2px solid $c-muted;
+      transform: translateY(-70%) rotate(45deg);
+      transition: transform .2s;
+    }
   }
-  .pg__item {
-    min-width: 30px;
-    height: 30px;
-    font-size: 12px;
-    border-radius: 6px;
+
+  .footer-nav__list {
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    transition: max-height .28s ease;
   }
+
+  .footer-nav .is-open {
+    .footer-nav__list { max-height: 320px; margin-bottom: 12px; }
+    .footer-nav__title::after { transform: translateY(-30%) rotate(-135deg); }
+  }
+
+  // last column (ООО Пульсар) — always open, no chevron
+  .footer-nav .row > div:last-child .footer-nav__title {
+    cursor: default;
+    &::after { display: none; }
+  }
+
+  .footer-bottom__inner { flex-direction: column; gap: 12px; text-align: center; }
+  .footer-callback__row { flex-direction: column; align-items: stretch; }
+  .footer-callback__form { flex-direction: column; }
+  .footer-callback__btn { width: 100%; }
+
+  // ── Auth modal → bottom sheet ──
+  .auth-overlay { align-items: flex-end; padding: 0; }
+  .auth-dialog {
+    max-width: 100%;
+    border-radius: 20px 20px 0 0;
+    padding: 24px 18px 28px;
+    max-height: 94vh;
+  }
+
+  // ── Profile sidebar → drawer ──
+  .profile-layout { grid-template-columns: 1fr; }
+
+  .profile-menu-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    background: #fff;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .07);
+    font-size: 15px;
+    font-weight: 700;
+    color: $c-dark;
+    cursor: pointer;
+  }
+
+  .profile-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 280px;
+    max-width: 84vw;
+    z-index: 1100;
+    border-radius: 0;
+    transform: translateX(-110%);
+    transition: transform .28s ease;
+    overflow-y: auto;
+
+    &.is-drawer-open { transform: translateX(0); }
+  }
+
+  .profile-sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    z-index: 1090;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s, visibility .25s;
+
+    &.is-open { opacity: 1; visibility: visible; }
+  }
+
+  // ── Inner tab bars → horizontal scroll ──
+  .profile-tabs,
+  .profile-orders__tabs,
+  .product-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar { display: none; }
+  }
+  .profile-tabs__item,
+  .profile-orders__tab,
+  .product-tabs__item { white-space: nowrap; flex-shrink: 0; }
+
+  // ── Fields single column ──
+  .pf-field-grid { grid-template-columns: 1fr; }
+  .checkout-field-grid,
+  .checkout-field-grid--third { grid-template-columns: 1fr !important; }
+
+  // ── Order group meta stacks ──
+  .order-group__meta-grid { grid-template-columns: 1fr; gap: 10px; }
+  .order-detail__actions { grid-template-columns: 1fr; }
+  .order-detail__status-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+  .order-detail__delivery-info { text-align: left; }
+
+  // ── Cart item reflow ──
+  .cart-item {
+    display: grid;
+    grid-template-columns: 22px 72px 1fr;
+    grid-template-areas:
+      "chk img price"
+      "chk img info"
+      "chk img qty";
+    gap: 6px 12px;
+    align-items: start;
+    padding: 14px;
+  }
+  .cart-item > .cart-checkbox { grid-area: chk; align-self: center; }
+  .cart-item__image { grid-area: img; align-self: center; }
+  .cart-item__img { width: 72px; height: 72px; }
+  .cart-item__price { grid-area: price; text-align: left; min-width: 0; }
+  .cart-item__info { grid-area: info; }
+  .cart-item__qty { grid-area: qty; justify-self: start; }
+
+  .cart-controls__info { display: none; }
+
+  // ── Product-card rows → horizontal scroll (hits / related / novinki) ──
+  .products-section__grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    padding-bottom: 6px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar { display: none; }
+
+    > .product-card {
+      flex: 0 0 72%;
+      max-width: 72%;
+      scroll-snap-align: start;
+    }
+  }
+
+  // ── Subcategory listing → 2 columns ──
+  .subcat-products-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  // ── Category subcategory cards → single column ──
+  .subcat-grid { grid-template-columns: 1fr; gap: 10px; }
+  .subcat-card { flex-direction: row; align-items: center; min-height: 0; padding: 12px 16px; }
+  .subcat-card__sub { display: none; }
+  .subcat-card__img { width: 80px; height: 64px; margin: 0 0 0 auto; }
+
+  // ── Catalog category cards ──
+  .catalog-cats__grid { grid-template-columns: 1fr; }
+  .catalog-cat-card { min-height: 200px; }
+  .catalog-cat-card__img { height: 220px; }
+
+  // ── Subcategory tag pills → horizontal scroll ──
+  .catalog-subcats__list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+
+    &::-webkit-scrollbar { display: none; }
+  }
+  .catalog-subcat-tag { flex-shrink: 0; }
+
+  // ── Filter bar wraps ──
+  .filter-bar { gap: 8px; }
+  .subcat-bottom { flex-direction: column; align-items: stretch; gap: 16px; }
+  .subcat-bottom__load-btn { width: 100%; }
+  .subcat-pagination { justify-content: center; }
+
+  // ── Payment / delivery cards shrink ──
+  .pay-card { width: calc(33.333% - 8px); height: 74px; }
+  .delivery-options { gap: 8px; }
+  .delivery-card { width: calc(33.333% - 6px); }
+  .payer-tabs { grid-template-columns: 1fr 1fr; }
+
+  // ── Notifications header ──
+  .profile-notif__header { flex-direction: column; align-items: stretch; gap: 12px; }
+  .profile-notif__actions { flex-wrap: wrap; }
+
+  // ── Promo banners stack ──
+  .promo-section__grid { grid-template-columns: 1fr; }
+
+  // ── Delivery / product hero single column (safety) ──
+  .delivery-steps__grid { grid-template-columns: 1fr; }
+  .delivery-services__grid { grid-template-columns: 1fr; }
+  .product-layout { grid-template-columns: 1fr; }
+
+  // ── Section titles smaller ──
+  .catalog-section__title,
+  .products-section__title,
+  .cart-page__title,
+  .checkout-page__title { font-size: 20px !important; }
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+//  SMALL MOBILE  ≤ 479px
+// ══════════════════════════════════════════════════════════════════════════════
+@media (max-width: 479px) {
+  .subcat-products-grid { grid-template-columns: 1fr; }
+  .products-section__grid > .product-card { flex: 0 0 82%; max-width: 82%; }
+
+  .pay-card { width: calc(50% - 6px); }
+  .delivery-card { width: calc(50% - 4px); }
+
+  .header-logo svg { height: 30px; }
 }

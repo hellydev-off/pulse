@@ -1,0 +1,149 @@
+{% extends 'layouts/base.twig' %}
+{% block title %}Вы смотрели — {{ siteName }}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <nav class="breadcrumb-nav">
+    <a href="/">Главная</a><span class="breadcrumb-nav__sep">—</span>
+    <a href="#">Александр</a>
+  </nav>
+
+  <div class="profile-layout">
+    {% include 'components/profile-sidebar.twig' with { active: 'history' } %}
+
+    <div class="profile-content">
+
+      {# Вы смотрели #}
+      <section class="products-section products-section--cols3" style="padding-top: 0;">
+        <h2 class="products-section__title">Вы смотрели:</h2>
+        <div class="products-section__grid">
+          <div class="product-card" data-id="kizlyar">
+            <a href="product.html?id=kizlyar" class="product-card__image-wrap">
+              <img src="/images/catalog/карт1.png" alt="Ножи для метания СМН+ (Кизляр)" class="product-card__img">
+              <span class="product-card__badge">-20 %</span>
+            </a>
+            <div class="product-card__body">
+              <div class="product-card__price-row">
+                <span class="product-card__price">6 000 Р</span>
+                <span class="product-card__price-old">7 500 Р</span>
+              </div>
+              <a href="#" class="product-card__name">Ножи для метания СМН+ (Кизляр)</a>
+              <span class="product-card__article">Артикул: H8A7C9</span>
+              <button type="button" class="product-card__btn product-card__btn--primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>
+                В корзину
+              </button>
+            </div>
+          </div>
+          <div class="product-card" data-id="multicam">
+            <a href="product.html?id=multicam" class="product-card__image-wrap">
+              <img src="/images/catalog/карт2.png" alt="Чехол МУЛЬТИКАМ" class="product-card__img">
+            </a>
+            <div class="product-card__body">
+              <div class="product-card__price-row">
+                <span class="product-card__price product-card__price--dark">900 Р</span>
+              </div>
+              <a href="#" class="product-card__name">Чехол «МУЛЬТИКАМ»</a>
+              <span class="product-card__article">Артикул: OIB1UW</span>
+              <div class="product-card__unavailable-row">
+                <button type="button" class="product-card__btn product-card__btn--disabled" disabled>Нет в наличии</button>
+                <button type="button" class="product-card__notify-btn" aria-label="Уведомить">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card" data-id="saro">
+            <a href="product.html?id=saro" class="product-card__image-wrap">
+              <img src="/images/catalog/карт1.png" alt="Ножи для метания СМН+ (Саро)" class="product-card__img">
+            </a>
+            <div class="product-card__body">
+              <div class="product-card__price-row">
+                <span class="product-card__price product-card__price--dark">7 000 Р</span>
+              </div>
+              <a href="#" class="product-card__name">Ножи для метания СМН+ (Саро)</a>
+              <span class="product-card__article">Артикул: JUZ9BJ</span>
+              <button type="button" class="product-card__btn product-card__btn--primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>
+                В корзину
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="products-section__dots">
+          <span class="products-section__dot products-section__dot--active"></span>
+          <span class="products-section__dot"></span>
+          <span class="products-section__dot"></span>
+          <span class="products-section__dot"></span>
+        </div>
+      </section>
+
+      {# Подобрали для Вас #}
+      <section class="products-section products-section--cols3">
+        <h2 class="products-section__title">Подобрали для Вас:</h2>
+        <div class="products-section__grid">
+          <div class="product-card" data-id="kizlyar">
+            <a href="product.html?id=kizlyar" class="product-card__image-wrap">
+              <img src="/images/catalog/карт1.png" alt="Ножи для метания СМН+ (Кизляр)" class="product-card__img">
+              <span class="product-card__badge">-20 %</span>
+            </a>
+            <div class="product-card__body">
+              <div class="product-card__price-row">
+                <span class="product-card__price">6 000 Р</span>
+                <span class="product-card__price-old">7 500 Р</span>
+              </div>
+              <a href="#" class="product-card__name">Ножи для метания СМН+ (Кизляр)</a>
+              <span class="product-card__article">Артикул: H8A7C9</span>
+              <button type="button" class="product-card__btn product-card__btn--primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>
+                В корзину
+              </button>
+            </div>
+          </div>
+          <div class="product-card" data-id="multicam">
+            <a href="product.html?id=multicam" class="product-card__image-wrap">
+              <img src="/images/catalog/карт2.png" alt="Чехол МУЛЬТИКАМ" class="product-card__img">
+            </a>
+            <div class="product-card__body">
+              <div class="product-card__price-row">
+                <span class="product-card__price product-card__price--dark">900 Р</span>
+              </div>
+              <a href="#" class="product-card__name">Чехол «МУЛЬТИКАМ»</a>
+              <span class="product-card__article">Артикул: OIB1UW</span>
+              <div class="product-card__unavailable-row">
+                <button type="button" class="product-card__btn product-card__btn--disabled" disabled>Нет в наличии</button>
+                <button type="button" class="product-card__notify-btn" aria-label="Уведомить">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card" data-id="saro">
+            <a href="product.html?id=saro" class="product-card__image-wrap">
+              <img src="/images/catalog/карт1.png" alt="Ножи для метания СМН+ (Саро)" class="product-card__img">
+            </a>
+            <div class="product-card__body">
+              <div class="product-card__price-row">
+                <span class="product-card__price product-card__price--dark">7 000 Р</span>
+              </div>
+              <a href="#" class="product-card__name">Ножи для метания СМН+ (Саро)</a>
+              <span class="product-card__article">Артикул: JUZ9BJ</span>
+              <button type="button" class="product-card__btn product-card__btn--primary">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18M16 10a4 4 0 01-8 0"/></svg>
+                В корзину
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="products-section__dots">
+          <span class="products-section__dot products-section__dot--active"></span>
+          <span class="products-section__dot"></span>
+          <span class="products-section__dot"></span>
+          <span class="products-section__dot"></span>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

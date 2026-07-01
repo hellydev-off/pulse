@@ -1,31 +1,35 @@
-// ─── Bootstrap 3 ──────────────────────────────────────────────────────────────
-// Переменные переопределяются ДО импорта Bootstrap
+// ─── Variables (Bootstrap overrides + custom) ─────────────────────────────────
 @import "components/variables";
+
+// ─── Bootstrap 3 ──────────────────────────────────────────────────────────────
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-// ─── Компоненты ───────────────────────────────────────────────────────────────
-@import "components/fonts";
+// ─── Base ─────────────────────────────────────────────────────────────────────
+@import "components/base";
+
+// ─── Components ───────────────────────────────────────────────────────────────
 @import "components/header";
 @import "components/footer";
-@import "components/product-card";
+@import "components/delivery";
+@import "components/cart";
 @import "components/catalog";
-@import "components/news";
-@import "components/doctors";
-@import "components/doctor-profile";
-@import "components/about";
-@import "components/index";
-@import "components/pages";
-@import "components/gynecology";
-@import "components/reviews-slider";
-@import "components/vedenie";
-@import "components/alerts";
+@import "components/modal";
+@import "components/product";
+@import "components/profile";
+@import "components/checkout";
+@import "components/shop";
 
-// ─── Responsive layer (must stay LAST so breakpoint overrides win) ─────────────
+// ─── Responsive (must stay LAST so breakpoint overrides win) ──────────────────
 @import "components/responsive";
 
 // ─── Global overflow fix ───────────────────────────────────────────────────────
 html,
 body {
   overflow-x: hidden;
-  background-color: #f9f3ed;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }

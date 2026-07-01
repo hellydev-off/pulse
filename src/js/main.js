@@ -155,6 +155,59 @@
     });
   }
 
+  // ─── Footer accordion (mobile only) ────────────────────────────────────────
+  function initFooterAccordion() {
+    var titles = document.querySelectorAll('.footer-nav__title');
+    titles.forEach(function (title) {
+      title.addEventListener('click', function () {
+        if (window.innerWidth > 767) return;
+        var col = title.closest('.col-sm-6, .col-md-3');
+        if (col) col.classList.toggle('is-open');
+      });
+    });
+  }
+
+  // ─── Profile sidebar drawer (mobile only) ──────────────────────────────────
+  function initProfileSidebar() {
+    var sidebar = document.querySelector('.profile-sidebar');
+    var content = document.querySelector('.profile-content');
+    if (!sidebar || !content) return;
+
+    // Trigger button injected before content
+    var trigger = document.createElement('button');
+    trigger.type = 'button';
+    trigger.className = 'profile-menu-trigger';
+    var nameEl = sidebar.querySelector('.profile-sidebar__name');
+    var name = nameEl ? nameEl.textContent.replace(/\s+/g, ' ').trim() : 'Меню профиля';
+    trigger.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg><span>' + name + '</span>';
+    content.parentNode.insertBefore(trigger, content);
+
+    // Overlay
+    var overlay = document.createElement('div');
+    overlay.className = 'profile-sidebar-overlay';
+    document.body.appendChild(overlay);
+
+    function open() {
+      sidebar.classList.add('is-drawer-open');
+      overlay.classList.add('is-open');
+      document.body.classList.add('menu-open');
+    }
+    function close() {
+      sidebar.classList.remove('is-drawer-open');
+      overlay.classList.remove('is-open');
+      document.body.classList.remove('menu-open');
+    }
+
+    trigger.addEventListener('click', open);
+    overlay.addEventListener('click', close);
+    sidebar.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', close);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') close();
+    });
+  }
+
   // ─── Review text truncation (mobile only) ──────────────────────────────────
   function initReviewTruncation() {
     if (window.innerWidth > 767) return;
@@ -175,10 +228,191 @@
     });
   }
 
+  // ─── Phone mask ───────────────────────────────────────────────────────────────
+  function applyPhoneMask(input) {
+    var el = input[0];
+
+    function format(val) {
+      var digits = val.replace(/\D/g, '');
+      if (digits.length === 0) return '';
+      if (digits[0] === '8') digits = '7' + digits.slice(1);
+      if (digits[0] !== '7') digits = '7' + digits;
+      digits = digits.slice(0, 11);
+
+      var result = '+7';
+      if (digits.length > 1) result += ' ' + digits.slice(1, 4);
+      if (digits.length > 4) result += ' ' + digits.slice(4, 7);
+      if (digits.length > 7) result += '-' + digits.slice(7, 9);
+      if (digits.length > 9) result += '-' + digits.slice(9, 11);
+      return result;
+    }
+
+    input.on('focus', function () {
+      if (!el.value) {
+        el.value = '+7 ';
+        // Place cursor after prefix, not at position 0
+        setTimeout(function () {
+          try { el.setSelectionRange(3, 3); } catch (e) {}
+        }, 0);
+      }
+    });
+
+    input.on('input', function () {
+      var pos   = el.selectionStart;
+      var old   = el.value;
+      var fresh = format(el.value);
+
+      el.value = fresh;
+
+      var diff = fresh.length - old.length;
+      var newPos = Math.max(3, pos + diff);
+      try { el.setSelectionRange(newPos, newPos); } catch (e) {}
+    });
+
+    input.on('keydown', function (e) {
+      if ((e.key === 'Backspace' || e.key === 'Delete') &&
+          (el.value === '+7 ' || el.value === '+7')) {
+        e.preventDefault();
+        el.value = '';
+      }
+    });
+
+    input.on('blur', function () {
+      if (el.value === '+7 ' || el.value === '+7') el.value = '';
+    });
+  }
+
+  function isPhoneComplete(val) {
+    return val.replace(/\D/g, '').length === 11;
+  }
+
+  // ─── Email validation ─────────────────────────────────────────────────────────
+  function isEmailValid(val) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val.trim());
+  }
+
+  // ─── Login modal ─────────────────────────────────────────────────────────────
+  function initLoginModal() {
+    var overlay     = $('#loginModal');
+    var closeBtn    = $('#modalClose');
+    var openBtn     = $('#openLoginModal');
+    var tabs        = $('.auth-dialog__tab');
+    var phoneInput  = $('#phoneInput');
+    var emailInput  = $('#emailInput');
+    var phoneErr    = $('#phoneError');
+    var emailErr    = $('#emailError');
+    var phoneSubmit = $('#phoneSubmit');
+    var emailSubmit = $('#emailSubmit');
+
+    if (!overlay.length) return;
+
+    applyPhoneMask(phoneInput);
+
+    function openModal() {
+      overlay.addClass('is-open').attr('aria-hidden', 'false');
+      $('body').addClass('auth-open');
+      setTimeout(function () { phoneInput.focus(); }, 250);
+    }
+
+    function closeModal() {
+      overlay.removeClass('is-open').attr('aria-hidden', 'true');
+      $('body').removeClass('auth-open');
+    }
+
+    // Delegated: the "Войти" button is re-rendered by shop.js on auth change
+    $(document).on('click', '#openLoginModal', function (e) {
+      e.preventDefault();
+      openModal();
+    });
+
+    closeBtn.on('click', closeModal);
+
+    overlay.on('click', function (e) {
+      if ($(e.target).is(overlay)) closeModal();
+    });
+
+    $(document).on('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // ── Tab switching ──
+    tabs.on('click', function () {
+      var target = $(this).data('tab');
+      tabs.removeClass('auth-dialog__tab--active').attr('aria-selected', 'false');
+      $(this).addClass('auth-dialog__tab--active').attr('aria-selected', 'true');
+
+      $('.auth-pane').removeClass('auth-pane--active').attr('hidden', true);
+      $('#modal-pane-' + target).addClass('auth-pane--active').removeAttr('hidden');
+
+      // Reset errors on tab switch
+      phoneInput.removeClass('is-invalid');
+      emailInput.removeClass('is-invalid');
+      phoneErr.removeClass('is-visible');
+      emailErr.removeClass('is-visible');
+    });
+
+    // ── Phone submit ──
+    phoneSubmit.on('click', function () {
+      var val = phoneInput.val();
+      if (!isPhoneComplete(val)) {
+        phoneInput.addClass('is-invalid');
+        phoneErr.addClass('is-visible');
+        phoneInput.focus();
+        return;
+      }
+      phoneInput.removeClass('is-invalid');
+      phoneErr.removeClass('is-visible');
+      // Stub auth: accept any valid number
+      if (window.Pulse) window.Pulse.login({ name: 'Александр', contact: val });
+      closeModal();
+    });
+
+    phoneInput.on('input', function () {
+      if (isPhoneComplete($(this).val())) {
+        $(this).removeClass('is-invalid');
+        phoneErr.removeClass('is-visible');
+      }
+    });
+
+    // ── Email submit ──
+    emailSubmit.on('click', function () {
+      var val = emailInput.val();
+      if (!isEmailValid(val)) {
+        emailInput.addClass('is-invalid');
+        emailErr.addClass('is-visible');
+        emailInput.focus();
+        return;
+      }
+      emailInput.removeClass('is-invalid');
+      emailErr.removeClass('is-visible');
+      // Stub auth: accept any valid email
+      if (window.Pulse) window.Pulse.login({ name: 'Александр', contact: val });
+      closeModal();
+    });
+
+    emailInput.on('input', function () {
+      if (isEmailValid($(this).val())) {
+        $(this).removeClass('is-invalid');
+        emailErr.removeClass('is-visible');
+      }
+    });
+
+    emailInput.on('blur', function () {
+      var val = $(this).val();
+      if (val && !isEmailValid(val)) {
+        $(this).addClass('is-invalid');
+        emailErr.addClass('is-visible');
+      }
+    });
+  }
+
   $(document).ready(function () {
     console.log('Harmony theme ready');
 
     initMobileMenu();
+    initLoginModal();
+    initFooterAccordion();
+    initProfileSidebar();
     window.setTimeout(initReviewTruncation, 50);
 
     // Doctor card → profile page navigation

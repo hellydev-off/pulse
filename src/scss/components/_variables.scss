@@ -1,28 +1,22 @@
-// ─── Цвета ────────────────────────────────────────────────────────────────────
-$brand-primary:   #2c6e49;
-$brand-secondary: #4c956c;
-$text-color:      #333333;
-$link-color:      $brand-primary;
-$link-hover-color: darken($brand-primary, 10%);
+// Bootstrap 3 variable overrides — must load BEFORE @import bootstrap
 
-// ─── Типографика ──────────────────────────────────────────────────────────────
-$font-family-base: 'Inter', Arial, sans-serif;
-$font-size-base:   15px;
+$brand-primary: #3b82f6;
+$font-family-sans-serif: "Onest", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+$font-family-base: $font-family-sans-serif;
+$font-size-base: 15px;
 $line-height-base: 1.6;
+$border-radius-base: 6px;
+$border-radius-large: 10px;
+$container-large-desktop: (1200px + 30px);
 
-// ─── Сетка Bootstrap 3 ────────────────────────────────────────────────────────
-$grid-columns:      12;
-$grid-gutter-width: 30px;
+// ─── Custom palette ───────────────────────────────────────────────────────────
+$c-primary: #05a8ff;
+$c-dark: #1a2236;
+$c-text: #374151;
+$c-muted: #8d9ba7;
+$c-border: #e5e7eb;
+$c-footer-bg: #eef3f9;
 
-// ─── Navbar ───────────────────────────────────────────────────────────────────
-$navbar-height:          60px;
-$navbar-default-bg:      #ffffff;
-$navbar-default-border:  #e0e0e0;
-$navbar-default-color:   $text-color;
-$navbar-default-link-color:       $text-color;
-$navbar-default-link-hover-color: $brand-primary;
-$navbar-default-link-active-color: $brand-primary;
-
-// ─── Кнопки ───────────────────────────────────────────────────────────────────
-$btn-primary-bg:     $brand-primary;
-$btn-primary-border: darken($brand-primary, 5%);
+// ─── Layout ───────────────────────────────────────────────────────────────────
+$header-top-h: 48px;
+$header-main-h: 84px;

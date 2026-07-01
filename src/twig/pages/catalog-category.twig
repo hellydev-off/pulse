@@ -1,0 +1,70 @@
+{% extends 'layouts/base.twig' %}
+{% block title %}Спортивное метание ножа — {{ siteName }}{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <nav class="breadcrumb-nav">
+    <a href="/">Главная</a><span class="breadcrumb-nav__sep">—</span>
+    <a href="catalog.html">Каталог</a><span class="breadcrumb-nav__sep">—</span>
+    <span>Спортивное метание ножа</span>
+  </nav>
+
+  <h1 class="catalog-section__title" style="font-size:26px; margin-bottom:24px;">Спортивное метание ножа</h1>
+
+  {# ── Subcategory cards ── #}
+  <div class="subcat-grid">
+
+    <a href="catalog-subcategory.html" class="subcat-card">
+      <span class="subcat-card__name">Спортивные метальные ножи</span>
+      <span class="subcat-card__sub">Профессиональный инвентарь</span>
+      <img src="/images/category/knife.png" alt="" class="subcat-card__img">
+    </a>
+
+    <a href="catalog-subcategory.html" class="subcat-card subcat-card--active">
+      <span class="subcat-card__name">Чехлы для метательных ножей</span>
+      <span class="subcat-card__sub">Хранение и переноска</span>
+      <img src="/images/category/che.png" alt="" class="subcat-card__img">
+    </a>
+
+    <a href="catalog-subcategory.html" class="subcat-card">
+      <span class="subcat-card__name">Аксессуары для спортивного метания ножей</span>
+      <span class="subcat-card__sub">Экипировка и расходники</span>
+      <img src="/images/category/knife.png" alt="" class="subcat-card__img">
+    </a>
+
+    <a href="catalog-subcategory.html" class="subcat-card">
+      <span class="subcat-card__name">Оборудование для спортивного метания ножей</span>
+      <span class="subcat-card__sub">Мишени и стойки</span>
+      <img src="/images/category/mesh.png" alt="" class="subcat-card__img">
+    </a>
+
+    <a href="catalog-subcategory.html" class="subcat-card">
+      <span class="subcat-card__name">Спортивные метальные ножи</span>
+      <span class="subcat-card__sub">Профессиональный инвентарь</span>
+      <img src="/images/category/knife.png" alt="" class="subcat-card__img">
+    </a>
+
+    <a href="catalog-subcategory.html" class="subcat-card">
+      <span class="subcat-card__name">Чехлы для метательных ножей</span>
+      <span class="subcat-card__sub">Хранение и переноска</span>
+      <img src="/images/category/che.png" alt="" class="subcat-card__img">
+    </a>
+
+    <a href="catalog-subcategory.html" class="subcat-card">
+      <span class="subcat-card__name">Аксессуары для спортивного метания ножей</span>
+      <span class="subcat-card__sub">Экипировка и расходники</span>
+      <img src="/images/category/kn.png" alt="" class="subcat-card__img">
+    </a>
+
+  </div>
+
+</div>
+
+{# ── Bestsellers ── #}
+{% include 'components/product-cards.twig' with { title: 'Хиты продаж:' } %}
+
+{# ── New arrivals ── #}
+{% include 'components/product-cards.twig' with { title: 'Новинки:' } %}
+
+{% endblock %}

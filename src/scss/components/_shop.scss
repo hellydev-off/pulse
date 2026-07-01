@@ -1,0 +1,150 @@
+// ════════════════════════════════════════════════════════════════════════════
+//  Styles for JS-driven shop UI (cart, product, checkout, header badge, toast)
+// ════════════════════════════════════════════════════════════════════════════
+
+// ─── Header action badges (cart / orders / profile) ───────────────────────────
+.header-action--cart,
+.header-action--has-badge {
+  position: relative;
+}
+
+.header-action__badge {
+  position: absolute;
+  top: -2px;
+  right: 2px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: $c-primary;
+  color: #fff !important;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+  font-family: 'Onest', sans-serif;
+}
+
+// ─── Toast ─────────────────────────────────────────────────────────────────────
+.pulse-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translate(-50%, 20px);
+  background: $c-dark;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 22px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1200;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+  }
+}
+
+// ─── Cart item image (real product photo) ──────────────────────────────────────
+.cart-item__img {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  background: $c-footer-bg;
+  border-radius: 8px;
+  padding: 6px;
+  flex-shrink: 0;
+}
+
+// dark price when there is no discount
+.cart-item__price-current--plain {
+  color: $c-dark;
+}
+
+// ─── Empty cart / order ────────────────────────────────────────────────────────
+.cart-empty {
+  padding: 40px 0;
+  font-size: 15px;
+  color: $c-muted;
+  line-height: 1.7;
+
+  a {
+    color: $c-primary;
+    font-weight: 600;
+  }
+}
+
+// ─── Product gallery images ────────────────────────────────────────────────────
+.product-gallery__main-img {
+  display: block;
+  width: 100%;
+  height: 380px;
+  object-fit: contain;
+  background: #fff;
+  padding: 24px;
+}
+
+.product-gallery__thumb-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 6px;
+}
+
+// disabled add-to-cart on out-of-stock product
+.product-info__add-btn.is-disabled {
+  background: $c-border;
+  color: $c-muted;
+  cursor: not-allowed;
+
+  &:hover {
+    background: $c-border;
+  }
+}
+
+// ─── Checkout validation + errors ──────────────────────────────────────────────
+.checkout-field.is-invalid {
+  border-color: #e53935;
+}
+.checkout-address.is-invalid {
+  border-color: #e53935;
+}
+
+.checkout-error {
+  font-size: 13px;
+  color: #e53935;
+  line-height: 1.4;
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  background: #fff0ef;
+  border-radius: 8px;
+}
+
+// ─── Order footer (total per created order) ────────────────────────────────────
+.order-group__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 14px 20px;
+  border-top: 1px solid $c-border;
+}
+
+.order-group__footer-label {
+  font-size: 13px;
+  color: $c-muted;
+}
+.order-group__footer-total {
+  font-size: 16px;
+  font-weight: 700;
+  color: $c-dark;
+}

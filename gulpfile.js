@@ -93,7 +93,7 @@ function html() {
     .pipe(twig({
       base: 'src/twig/',
       data: {
-        siteName: 'Harmony',
+        siteName: 'Пульсар',
         year: new Date().getFullYear(),
       },
     }))
