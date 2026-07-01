@@ -187,37 +187,33 @@ body.menu-open { overflow: hidden; }
   .footer-callback__row { flex-wrap: wrap; gap: 12px; }
   .footer-callback__logo { display: none; }
 
-  // Форма обратной связи — вертикальная компактная карточка
   .footer-callback__form {
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 10px;
-    background: #fff;
-    border-radius: 16px;
-    padding: 16px;
-    box-shadow: 0 2px 12px rgba(0,0,0,.06);
     width: 100%;
   }
 
   .footer-callback__input {
-    width: 100%;
-    height: 48px;
-    border-radius: 10px;
-    border: 1.5px solid $c-border;
-    font-size: 15px;
-    padding: 0 16px;
-    background: $c-footer-bg;
+    flex: 1;
+    min-width: 0;
+    height: 46px;
+    border-radius: 8px;
+    border: none;
+    background: #fff;
+    padding: 0 14px;
+    font-size: 14px;
 
-    &:focus {
-      border-color: $c-primary;
-      background: #fff;
-    }
+    &:focus { outline: none; }
   }
 
   .footer-callback__btn {
-    width: 100%;
-    border-radius: 10px;
-    height: 48px;
-    font-size: 15px;
+    flex-shrink: 0;
+    height: 46px;
+    border-radius: 8px;
+    font-size: 14px;
+    white-space: nowrap;
   }
 
   .footer-nav .row > div:not(:last-child) { margin-bottom: 4px; }
