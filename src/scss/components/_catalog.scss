@@ -26,16 +26,23 @@
   text-decoration: none;
   min-height: 220px;
   transition: box-shadow 0.18s;
+  transition: all 0.25s;
 
   &:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-  }
-
-  &--active {
     background: #00a8ff;
+    transition: all 0.25s;
 
     .catalog-cat-card__name {
       color: #fff;
+    }
+  }
+
+  &--active {
+    // background: #00a8ff;
+
+    .catalog-cat-card__name {
+      // color: #fff;
     }
   }
 
@@ -50,7 +57,7 @@
 
   &__img {
     display: block;
-    width: 100%;
+    width: 85%;
     height: 400px;
     object-fit: contain;
     object-position: center bottom;
@@ -128,7 +135,9 @@
   flex-direction: column;
   text-decoration: none;
   overflow: hidden;
-  transition: background 0.25s, box-shadow 0.25s;
+  transition:
+    background 0.25s,
+    box-shadow 0.25s;
 
   &:hover {
     background: $c-primary;
@@ -188,20 +197,22 @@
   border: 1.5px solid $c-border;
   border-radius: 10px;
   background: #fff;
-  transition: border-color .15s;
+  transition: border-color 0.15s;
 
-  &__input { display: none; }
+  &__input {
+    display: none;
+  }
 
   &__track {
     position: relative;
     display: inline-block;
     width: 38px;
     height: 22px;
-    background: #D1D5DB;
+    background: #d1d5db;
     border-radius: 11px;
     cursor: pointer;
     flex-shrink: 0;
-    transition: background .2s;
+    transition: background 0.2s;
   }
 
   &__knob {
@@ -212,8 +223,8 @@
     height: 16px;
     border-radius: 50%;
     background: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,.2);
-    transition: transform .2s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
     pointer-events: none;
     display: block;
   }

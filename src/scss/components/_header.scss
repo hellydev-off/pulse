@@ -37,6 +37,7 @@
   border-right: 1px solid $c-border;
   white-space: nowrap;
   color: $c-muted;
+  transition: color 0.18s;
 
   &:last-child {
     border-right: none;
@@ -44,8 +45,14 @@
     padding-right: 0;
   }
 
-  .svg-icon {
-    color: $c-muted;
+  svg path {
+    transition: fill 0.18s;
+  }
+
+  &:hover {
+    color: $c-primary;
+    a { color: $c-primary; }
+    svg path { fill: $c-primary; }
   }
 }
 
@@ -198,23 +205,29 @@
   border-radius: 6px;
   transition: color 0.18s;
 
-  .svg-icon {
-    color: $c-text;
+  svg path {
+    transition: fill 0.18s;
   }
 
   span {
     display: block;
     font-size: 12px;
     color: $c-text;
+    transition: color 0.18s;
   }
 
-  &:hover {
+  &:hover,
+  &--active {
     color: $c-primary;
-    .svg-icon {
-      color: $c-primary;
-    }
-    span {
-      color: $c-primary;
-    }
+    svg path { fill: $c-primary; }
+    span { color: $c-primary; }
   }
+}
+
+// Active state based on current page
+.page-profile .header-action--profile,
+.page-cart    .header-action--cart {
+  color: $c-primary;
+  svg path { fill: $c-primary; }
+  span { color: $c-primary; }
 }

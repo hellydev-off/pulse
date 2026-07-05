@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="/css/main.css">
     {% block head %}{% endblock %}
   </head>
-  <body>
-    
+  <body class="{% block bodyClass %}{% endblock %}">
+
     {% include 'components/header.twig' %}
 
     <main class="main-content">

@@ -406,6 +406,43 @@
     });
   }
 
+  // ─── Product slider (auto-play + dot nav) ────────────────────────────────────
+  function initProductSlider() {
+    document.querySelectorAll('.products-section').forEach(function (section) {
+      var track = section.querySelector('.products-slider__track');
+      var dots  = [].slice.call(section.querySelectorAll('.products-section__dot'));
+      if (!track || !dots.length) return;
+
+      var total = dots.length;
+      var cur   = 0;
+      var timer;
+
+      function goTo(index) {
+        cur = index;
+        track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+        dots.forEach(function (dot, i) {
+          dot.classList.toggle('products-section__dot--active', i === cur);
+        });
+      }
+
+      function startAuto() {
+        timer = setInterval(function () {
+          goTo((cur + 1) % total);
+        }, 4000);
+      }
+
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () {
+          clearInterval(timer);
+          goTo(i);
+          startAuto();
+        });
+      });
+
+      startAuto();
+    });
+  }
+
   $(document).ready(function () {
     console.log('Harmony theme ready');
 
@@ -413,6 +450,7 @@
     initLoginModal();
     initFooterAccordion();
     initProfileSidebar();
+    initProductSlider();
     window.setTimeout(initReviewTruncation, 50);
 
     // Doctor card → profile page navigation

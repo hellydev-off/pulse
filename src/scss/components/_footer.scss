@@ -17,7 +17,10 @@
 
 .footer-callback__logo {
   flex-shrink: 0;
-  img { height: 40px; width: auto; }
+  img {
+    height: 40px;
+    width: auto;
+  }
 }
 
 .footer-callback__text {
@@ -45,10 +48,14 @@
   background: #fff;
   color: $c-text;
   outline: none;
-  transition: border-color .18s;
+  transition: border-color 0.18s;
 
-  &::placeholder { color: $c-muted; }
-  &:focus { border-color: $c-primary; }
+  &::placeholder {
+    color: $c-muted;
+  }
+  &:focus {
+    border-color: $c-primary;
+  }
 }
 
 .footer-callback__btn {
@@ -62,9 +69,11 @@
   font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
-  transition: background .18s;
+  transition: background 0.18s;
 
-  &:hover { background: darken($c-primary, 8%); }
+  &:hover {
+    background: darken($c-primary, 8%);
+  }
 }
 
 // ─── Nav columns ──────────────────────────────────────────────────────────────
@@ -75,7 +84,7 @@
 .footer-nav__title {
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: $c-dark;
   margin: 0 0 18px;
@@ -89,12 +98,16 @@
   padding: 0;
   margin: 0;
 
-  li { margin-bottom: 10px; }
+  li {
+    margin-bottom: 10px;
+  }
 
   a {
     font-size: 14px;
     color: $c-text;
-    &:hover { color: $c-primary; }
+    &:hover {
+      color: $c-primary;
+    }
   }
 }
 
@@ -147,13 +160,18 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  transition: opacity .18s;
 
-  &:hover { opacity: .85; }
+  svg path:first-child {
+    transition: fill 0.2s ease;
+  }
 
-  &--ok  { background: #EE8208; }
-  &--tg  { background: #27A7E7; }
-  &--vk  { background: #4680C2; }
+  &--max:hover svg path:first-child { fill: #8B31C7; }
+  &--tg:hover  svg path:first-child { fill: #26A5E4; }
+  &--vk:hover  svg path:first-child { fill: #0077FF; }
+
+  // &--ok  { background: #EE8208; }
+  // &--tg  { background: #27A7E7; }
+  // &--vk  { background: #4680C2; }
 }
 
 // ─── Bottom bar ───────────────────────────────────────────────────────────────
@@ -187,5 +205,5 @@
   font-size: 12px;
   font-weight: 700;
   color: $c-muted;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
 }
