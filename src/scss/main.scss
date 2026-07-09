@@ -10,14 +10,7 @@
 // ─── Components ───────────────────────────────────────────────────────────────
 @import "components/header";
 @import "components/footer";
-@import "components/delivery";
-@import "components/cart";
-@import "components/catalog";
-@import "components/modal";
-@import "components/product";
-@import "components/profile";
-@import "components/checkout";
-@import "components/shop";
+@import "components/contextual-advertising";
 
 // ─── Responsive (must stay LAST so breakpoint overrides win) ──────────────────
 @import "components/responsive";

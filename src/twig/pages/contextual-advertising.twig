@@ -1,0 +1,818 @@
+{% extends 'layouts/base.twig' %}
+
+{% block title %}Контекстная реклама — IT-студия SEOMETRIKA{% endblock %}
+
+{% block content %}
+
+{# ════════════════════════════════════════════════════════
+   HERO
+   ════════════════════════════════════════════════════════ #}
+<section class="ca-hero" id="about">
+  <div class="ca-hero__bg" style="background-image: url('/images/contextualAdvertising/Фон.png');"></div>
+  <div class="ca-hero__overlay"></div>
+  <div class="container">
+    <div class="ca-hero__content">
+      <h1 class="ca-hero__title">
+        Хотите раскрутиться<br>за кратчайший срок?<br>Есть решение —<br>контекстная реклама!
+      </h1>
+      <p class="ca-hero__sub">
+        <strong>Быстрый, эффективный и очень мощный инструмент</strong>, который даёт возможность
+        за кратчайшие сроки заявить о своём продукте или услугах в интернете.
+      </p>
+      <a href="#tariffs" class="ca-btn ca-btn--primary">
+        <span class="ca-btn__icon">&#9783;</span>
+        Рассчитать стоимость
+      </a>
+    </div>
+  </div>
+</section>
+
+{# ════════════════════════════════════════════════════════
+   01. ПРЕИМУЩЕСТВА КОНТЕКСТНОЙ РЕКЛАМЫ
+   ════════════════════════════════════════════════════════ #}
+<section class="ca-section" id="about-benefits">
+  <div class="container">
+
+    <div class="ca-section-label">
+      <span class="ca-section-label__num">01</span>
+    </div>
+    <h2 class="ca-section-title">Преимущества контекстной рекламы</h2>
+
+    <div class="ca-benefits">
+
+      <div class="ca-benefit-card">
+        <div class="ca-benefit-card__icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="14" stroke="#05a8ff" stroke-width="2"/>
+            <path d="M10 16l4 4 8-8" stroke="#05a8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="ca-benefit-card__title">Моментальный результат</h3>
+        <p class="ca-benefit-card__text">
+          Контекстная реклама <strong>приносит мгновенный результат</strong> практически сразу после запуска кампании.
+          Это подходит для бизнеса, которому нужны быстрые продажи и привлечение трафика.
+        </p>
+      </div>
+
+      <div class="ca-benefit-card">
+        <div class="ca-benefit-card__icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <path d="M4 26 L10 18 L16 22 L22 10 L28 14" stroke="#05a8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="28" cy="14" r="2" fill="#05a8ff"/>
+          </svg>
+        </div>
+        <h3 class="ca-benefit-card__title">Высокая эффективность</h3>
+        <p class="ca-benefit-card__text">
+          Контекстная реклама <strong>приводит к высоким коэффициентам конверсии</strong>, так как ориентирована
+          на пользователей. Таким образом, реклама попадает в «правильные руки» в нужный момент.
+        </p>
+      </div>
+
+      <div class="ca-benefit-card">
+        <div class="ca-benefit-card__icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="10" stroke="#05a8ff" stroke-width="2"/>
+            <circle cx="16" cy="16" r="4" fill="#05a8ff"/>
+            <path d="M16 4 v4 M16 24 v4 M4 16 h4 M24 16 h4" stroke="#05a8ff" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="ca-benefit-card__title">Увеличение узнаваемости бренда</h3>
+        <p class="ca-benefit-card__text">
+          Даже если пользователи не переходят по ссылке, они всё равно видят рекламу, что
+          <strong>способствует повышению осведомлённости о бренде</strong> и увеличению его видимости.
+        </p>
+      </div>
+
+      <div class="ca-benefit-card">
+        <div class="ca-benefit-card__icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <path d="M16 6 C22 6 26 10 26 16 C26 22 22 26 16 26 C10 26 6 22 6 16" stroke="#05a8ff" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 12 L20 20 M20 12 L12 20" stroke="#05a8ff" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="ca-benefit-card__title">Точность таргетинга</h3>
+        <p class="ca-benefit-card__text">
+          Реклама <strong>показывается пользователям, которые уже ищут</strong> определённые товары или услуги,
+          что значительно повышает вероятность конверсии.
+        </p>
+      </div>
+
+      <div class="ca-benefit-card">
+        <div class="ca-benefit-card__icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <rect x="4" y="8" width="24" height="16" rx="3" stroke="#05a8ff" stroke-width="2"/>
+            <path d="M10 16 h12 M16 12 v8" stroke="#05a8ff" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="ca-benefit-card__title">Гибкость бюджета</h3>
+        <p class="ca-benefit-card__text">
+          Задаётся нужный бюджет, регулируются ставки в зависимости от эффективности объявлений.
+          Это <strong>позволяет адаптировать рекламную кампанию под финансовые возможности бизнеса</strong>.
+        </p>
+      </div>
+
+      <div class="ca-benefit-card">
+        <div class="ca-benefit-card__icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="12" stroke="#05a8ff" stroke-width="2"/>
+            <path d="M16 10 v6 l4 4" stroke="#05a8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="ca-benefit-card__title">Скорость изменения и оптимизация</h3>
+        <p class="ca-benefit-card__text">
+          <strong>Легко и быстро вносятся изменения</strong> в объявления, тестируются вариации и
+          оптимизируются кампании для достижения лучших результатов.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{# CTA banner #}
+<div class="ca-cta-banner">
+  <div class="container">
+    <a href="#discuss">
+      <span class="ca-cta-banner__text">Запустить рекламную кампанию</span>
+      <span class="ca-cta-banner__arrow">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor">
+          <path d="M6 16 H26 M18 8 L26 16 L18 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </span>
+    </a>
+  </div>
+</div>
+
+{# ════════════════════════════════════════════════════════
+   02. УСЛУГИ
+   ════════════════════════════════════════════════════════ #}
+<section class="ca-section ca-section--gray" id="services">
+  <div class="container">
+
+    <div class="ca-section-label">
+      <span class="ca-section-label__num">02</span>
+    </div>
+    <div style="display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:40px;">
+      <h2 class="ca-section-title" style="margin-bottom:0;">Услуги по контекстной рекламе</h2>
+      <span class="ca-yd-badge">Яндекс&nbsp;Директ</span>
+    </div>
+
+    <div class="ca-services">
+      <div class="ca-services__left">
+
+        <div class="ca-services__nav">
+          <button class="ca-services__arrow" id="servPrev" aria-label="Предыдущий">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="ca-services__arrow" id="servNext" aria-label="Следующий">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+
+        <ul class="ca-services__list" id="servicesList">
+          <li class="ca-services__item is-active" data-serv="0">Поисковая текстовая реклама</li>
+          <li class="ca-services__item" data-serv="1">Баннер на поиске</li>
+          <li class="ca-services__item" data-serv="2">Поисковый ретаргетинг</li>
+          <li class="ca-services__item" data-serv="3">Динамические объявления</li>
+          <li class="ca-services__item" data-serv="4">РСЯ</li>
+        </ul>
+
+        <a href="#discuss" class="ca-btn ca-btn--dark">Оставить заявку</a>
+      </div>
+
+      <div class="ca-services__right">
+        <img src="/images/contextualAdvertising/ноутбук.png" alt="Яндекс Директ — контекстная реклама" class="ca-services__laptop"/>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{# ════════════════════════════════════════════════════════
+   03. НАШИ ПРЕИМУЩЕСТВА
+   ════════════════════════════════════════════════════════ #}
+<section class="ca-section" id="advantages">
+  <div class="container">
+
+    <div class="ca-section-label">
+      <span class="ca-section-label__num">03</span>
+    </div>
+    <h2 class="ca-section-title">Наши преимущества</h2>
+
+    <div style="display:grid; grid-template-columns:1fr 320px 1fr; gap:32px; align-items:center; margin-top:48px;">
+
+      {# Left column #}
+      <div style="display:flex; flex-direction:column; gap:48px;">
+        <div class="ca-adv-item is-active" data-adv="0" style="text-align:right;">
+          <div class="ca-adv-item__num">01</div>
+          <div class="ca-adv-item__label">Собственные аналитики</div>
+        </div>
+        <div class="ca-adv-item" data-adv="2" style="text-align:right;">
+          <div class="ca-adv-item__num">03</div>
+          <div class="ca-adv-item__label">Полное погружение в проект</div>
+        </div>
+      </div>
+
+      {# Circle #}
+      <div class="ca-adv-circle" id="advCircle">
+        <div class="ca-adv-circle__title" id="advTitle">Собственные аналитики</div>
+        <p class="ca-adv-circle__text" id="advText">
+          Для достижения оптимальных результатов в рамках установленного бюджета мы задействуем квалифицированных
+          сотрудников агентства, включая специалистов по веб-аналитике и маркетологов.
+        </p>
+      </div>
+
+      {# Right column #}
+      <div style="display:flex; flex-direction:column; gap:48px;">
+        <div class="ca-adv-item" data-adv="1">
+          <div class="ca-adv-item__num">02</div>
+          <div class="ca-adv-item__label">Индивидуальный подход</div>
+        </div>
+        <div class="ca-adv-item" data-adv="3">
+          <div class="ca-adv-item__num">04</div>
+          <div class="ca-adv-item__label">Индивидуальный аккаунт-менеджер</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{# ════════════════════════════════════════════════════════
+   04. ТАРИФЫ
+   ════════════════════════════════════════════════════════ #}
+<section class="ca-section ca-section--gray" id="tariffs">
+  <div class="container">
+
+    <div class="ca-tariffs-header">
+      <div>
+        <div class="ca-section-label"><span class="ca-section-label__num">04</span></div>
+        <h2 class="ca-section-title" style="margin-bottom:0;">Выберите тариф</h2>
+      </div>
+      <span class="ca-yd-badge">Яндекс&nbsp;Директ</span>
+    </div>
+
+    <table class="ca-tariff-table">
+      <thead>
+        <tr>
+          <th>Тариф</th>
+          <th>
+            <span class="ca-tariff-col__name">Премиум</span>
+            <a href="#discuss" class="ca-tariff-col__btn">Получить консультацию</a><br>
+            <span class="ca-tariff-col__price">от 100 000 ₽</span>
+          </th>
+          <th>
+            <span class="ca-tariff-col__name">Оптимальный</span>
+            <a href="#discuss" class="ca-tariff-col__btn">Получить консультацию</a><br>
+            <span class="ca-tariff-col__price">от 60 000 ₽</span>
+          </th>
+          <th>
+            <span class="ca-tariff-col__name">Старт</span>
+            <a href="#discuss" class="ca-tariff-col__btn">Получить консультацию</a><br>
+            <span class="ca-tariff-col__price">от 30 000 ₽</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Бюджет в месяц</td>
+          <td>от 100 000 ₽</td>
+          <td>от 60 000 ₽</td>
+          <td>от 30 000 ₽</td>
+        </tr>
+        <tr>
+          <td>1 месяц — подготовка и запуск рекламы</td>
+          <td>75 000 ₽</td>
+          <td>55 000 ₽</td>
+          <td>45 000 ₽</td>
+        </tr>
+        <tr>
+          <td>Со 2 месяца сопровождение рекламы</td>
+          <td>25 000 ₽/мес.</td>
+          <td>20 000 ₽/мес.</td>
+          <td>15 000 ₽/мес.</td>
+        </tr>
+        <tr>
+          <td>Количество запросов</td>
+          <td>Без ограничений</td>
+          <td>до 2500</td>
+          <td>до 500</td>
+        </tr>
+        <tr>
+          <td>Количество направлений</td>
+          <td>Без ограничений</td>
+          <td>до 5</td>
+          <td>до 2</td>
+        </tr>
+        <tr>
+          <td>Аналитика/цели</td>
+          <td>Яндекс Метрика</td>
+          <td>Яндекс Метрика</td>
+          <td>Яндекс Метрика</td>
+        </tr>
+        <tr>
+          <td>Еженедельные отчёты</td>
+          <td><span class="ca-check">+</span></td>
+          <td><span class="ca-check">+</span></td>
+          <td><span class="ca-check">+</span></td>
+        </tr>
+        <tr>
+          <td>Поисковая реклама</td>
+          <td><span class="ca-check">+</span></td>
+          <td><span class="ca-check">+</span></td>
+          <td><span class="ca-check">+</span></td>
+        </tr>
+        <tr>
+          <td>Рекламная сеть Яндекс</td>
+          <td><span class="ca-check">+</span></td>
+          <td><span class="ca-check">+</span></td>
+          <td><span class="ca-check">+</span></td>
+        </tr>
+        <tr>
+          <td>Ретаргетинг</td>
+          <td><span class="ca-check">+</span></td>
+          <td><span class="ca-check">+</span></td>
+          <td><span class="ca-check">+</span></td>
+        </tr>
+        <tr>
+          <td>Баннер на поиске</td>
+          <td><span class="ca-check">+</span></td>
+          <td><span class="ca-check">+</span></td>
+          <td><span class="ca-minus">—</span></td>
+        </tr>
+        <tr>
+          <td>Колтрекинг</td>
+          <td><span class="ca-check">+</span></td>
+          <td><span class="ca-check">+</span></td>
+          <td><span class="ca-minus">—</span></td>
+        </tr>
+        <tr>
+          <td>Динамические объявления</td>
+          <td><span class="ca-check">+</span></td>
+          <td><span class="ca-minus">—</span></td>
+          <td><span class="ca-minus">—</span></td>
+        </tr>
+        <tr>
+          <td>Смарт-баннеры</td>
+          <td><span class="ca-check">+</span></td>
+          <td><span class="ca-minus">—</span></td>
+          <td><span class="ca-minus">—</span></td>
+        </tr>
+        <tr>
+          <td>Товарная РК</td>
+          <td><span class="ca-check">+</span></td>
+          <td><span class="ca-minus">—</span></td>
+          <td><span class="ca-minus">—</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="tariff-footnote">
+      * При заказе разработки рекламной кампании без дальнейшего сопровождения стоимость увеличивается на 50%.
+    </p>
+
+  </div>
+</section>
+
+{# ════════════════════════════════════════════════════════
+   05. ЭТАПЫ
+   ════════════════════════════════════════════════════════ #}
+<section class="ca-steps" id="steps">
+  <div class="ca-steps__watermark">Рекламная кампания</div>
+  <div class="container">
+
+    <div class="ca-steps-header">
+      <div>
+        <div class="ca-section-label"><span class="ca-section-label__num" style="color:#05a8ff;">05</span></div>
+        <h2 class="ca-section-title ca-section-title--white">Этапы создания рекламной кампании</h2>
+      </div>
+    </div>
+
+    <div class="ca-steps-nums" id="stepsNums">
+      <div class="ca-steps-num is-done" data-step="0">1</div>
+      <div class="ca-steps-num is-done" data-step="1">2</div>
+      <div class="ca-steps-num is-done" data-step="2">3</div>
+      <div class="ca-steps-num is-active" data-step="3">4</div>
+      <div class="ca-steps-num" data-step="4">5</div>
+      <div class="ca-steps-num" data-step="5">6</div>
+      <div class="ca-steps-num" data-step="6">7</div>
+      <div class="ca-steps-num" data-step="7">8</div>
+      <div class="ca-steps-num" data-step="8">9</div>
+      <div class="ca-steps-num" data-step="9">10</div>
+    </div>
+
+    <div class="ca-step-content" data-step="0">
+      <div class="ca-step-content__label">Этап 1</div>
+      <h3 class="ca-step-content__title">Брифинг и анализ бизнеса клиента</h3>
+      <p class="ca-step-content__text">Выясняем цели рекламной кампании, целевую аудиторию, географию показов, бюджет и конкурентную среду. Погружаемся в специфику бизнеса для построения эффективной стратегии.</p>
+    </div>
+    <div class="ca-step-content" data-step="1">
+      <div class="ca-step-content__label">Этап 2</div>
+      <h3 class="ca-step-content__title">Сбор семантического ядра</h3>
+      <p class="ca-step-content__text">Собираем максимально полный список запросов, затем вручную прорабатываем его, проверяя соответствие тематике и предложению. Согласовываем с вами подобранные фразы.</p>
+    </div>
+    <div class="ca-step-content" data-step="2">
+      <div class="ca-step-content__label">Этап 3</div>
+      <h3 class="ca-step-content__title">Создание рекламных объявлений</h3>
+      <p class="ca-step-content__text">Разрабатываем продающие тексты объявлений, добавляем расширения, прописываем быстрые ссылки и UTM-метки для сквозной аналитики.</p>
+    </div>
+    <div class="ca-step-content is-active" data-step="3">
+      <div class="ca-step-content__label">Этап 4</div>
+      <h3 class="ca-step-content__title">Базовые рекомендации по улучшению посадочных страниц</h3>
+      <p class="ca-step-content__text">Важной задачей в контекстной рекламе являются не только привлечение целевого трафика на сайт, но и проработка посадочных страниц для повышения конверсии. Существует ряд критериев, который позволяет повысить качество посадочной страницы, и задача специалиста на старте предоставить идеи для улучшения сайта.</p>
+    </div>
+    <div class="ca-step-content" data-step="4">
+      <div class="ca-step-content__label">Этап 5</div>
+      <h3 class="ca-step-content__title">Настройка аналитики и целей</h3>
+      <p class="ca-step-content__text">Подключаем Яндекс Метрику, настраиваем цели конверсии, устанавливаем колтрекинг при необходимости. Это даёт полную картину пути пользователя от клика до сделки.</p>
+    </div>
+    <div class="ca-step-content" data-step="5">
+      <div class="ca-step-content__label">Этап 6</div>
+      <h3 class="ca-step-content__title">Запуск рекламных кампаний</h3>
+      <p class="ca-step-content__text">Загружаем кампании в Яндекс Директ, настраиваем ставки и стратегии показа. Проводим финальную проверку всех настроек перед стартом.</p>
+    </div>
+    <div class="ca-step-content" data-step="6">
+      <div class="ca-step-content__label">Этап 7</div>
+      <h3 class="ca-step-content__title">Ведение и первичная оптимизация</h3>
+      <p class="ca-step-content__text">В первые 2 недели тщательно мониторим кампании, отключаем неэффективные запросы, пополняем список минус-слов, корректируем ставки.</p>
+    </div>
+    <div class="ca-step-content" data-step="7">
+      <div class="ca-step-content__label">Этап 8</div>
+      <h3 class="ca-step-content__title">Еженедельная отчётность</h3>
+      <p class="ca-step-content__text">Предоставляем подробные отчёты с показателями: расход бюджета, количество кликов, конверсии, стоимость лида. Полная прозрачность на всех этапах работы.</p>
+    </div>
+    <div class="ca-step-content" data-step="8">
+      <div class="ca-step-content__label">Этап 9</div>
+      <h3 class="ca-step-content__title">Глубокая оптимизация</h3>
+      <p class="ca-step-content__text">На основе накопленной статистики проводим масштабную оптимизацию: расширяем или сужаем семантику, тестируем новые форматы объявлений, оптимизируем посадочные страницы.</p>
+    </div>
+    <div class="ca-step-content" data-step="9">
+      <div class="ca-step-content__label">Этап 10</div>
+      <h3 class="ca-step-content__title">Масштабирование результатов</h3>
+      <p class="ca-step-content__text">Выявляем наиболее прибыльные направления и масштабируем успешные кампании. Запускаем дополнительные форматы — смарт-баннеры, товарные кампании, РСЯ.</p>
+    </div>
+
+    <div class="ca-steps-nav">
+      <div style="display:flex;gap:10px;">
+        <button class="ca-steps-arrow" id="stepPrev">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="ca-steps-arrow" id="stepNext">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+      <a href="#discuss" class="ca-steps-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg>
+        Получить предложение
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{# ════════════════════════════════════════════════════════
+   06. ВОПРОС-ОТВЕТ
+   ════════════════════════════════════════════════════════ #}
+<section class="ca-section" id="faq">
+  <div class="container">
+
+    <div class="ca-section-label"><span class="ca-section-label__num">06</span></div>
+    <h2 class="ca-section-title">Вопрос-ответ</h2>
+
+    <div class="ca-faq">
+
+      <div class="ca-faq__list">
+
+        <div class="ca-faq-item">
+          <div class="ca-faq-item__head">
+            <p class="ca-faq-item__q">Почему стоит заказать контекстную рекламу от SEOMETRIKA?</p>
+            <span class="ca-faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          </div>
+          <div class="ca-faq-item__body">
+            Мы — сертифицированное агентство Яндекс.Директ с собственной командой аналитиков. Более 7 лет опыта, сотни успешных кампаний и прозрачная отчётность — вот что отличает нас от конкурентов.
+          </div>
+        </div>
+
+        <div class="ca-faq-item">
+          <div class="ca-faq-item__head">
+            <p class="ca-faq-item__q">Зачем же нужен специалист по контекстной рекламе, если всё так просто?</p>
+            <span class="ca-faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          </div>
+          <div class="ca-faq-item__body">
+            Самостоятельная настройка часто приводит к сливу бюджета. Профессионал знает, как правильно выбрать семантику, написать продающие тексты, настроить ставки и минус-слова, чтобы каждый рубль работал на результат.
+          </div>
+        </div>
+
+        <div class="ca-faq-item">
+          <div class="ca-faq-item__head">
+            <p class="ca-faq-item__q">Зачем платить за сопровождение рекламной кампании?</p>
+            <span class="ca-faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          </div>
+          <div class="ca-faq-item__body">
+            Рынок меняется, конкуренты корректируют ставки, аудитория эволюционирует. Постоянное сопровождение позволяет своевременно реагировать на изменения и удерживать высокий ROI кампании.
+          </div>
+        </div>
+
+        <div class="ca-faq-item">
+          <div class="ca-faq-item__head">
+            <p class="ca-faq-item__q">Что такое оптимизация и для чего нужно сопровождение рекламы?</p>
+            <span class="ca-faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          </div>
+          <div class="ca-faq-item__body">
+            Оптимизация — это непрерывный процесс улучшения кампании на основе данных: отключение неэффективных запросов, тестирование объявлений, корректировка ставок по устройствам, времени суток и географии.
+          </div>
+        </div>
+
+        <div class="ca-faq-item">
+          <div class="ca-faq-item__head">
+            <p class="ca-faq-item__q">У меня есть реклама, зачем платить повторно за настройку?</p>
+            <span class="ca-faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          </div>
+          <div class="ca-faq-item__body">
+            Мы проводим аудит существующих кампаний бесплатно. Если ваша реклама уже работает эффективно — скажем об этом честно. Если нет — предложим конкретный план улучшений.
+          </div>
+        </div>
+
+        <div class="ca-faq-item">
+          <div class="ca-faq-item__head">
+            <p class="ca-faq-item__q">Как я могу контролировать ход рекламной кампании и её результаты?</p>
+            <span class="ca-faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          </div>
+          <div class="ca-faq-item__body">
+            Мы предоставляем еженедельные отчёты, открытый доступ к рекламным кабинетам и готовы созваниваться для разбора показателей в любое удобное время.
+          </div>
+        </div>
+
+        <div class="ca-faq-item">
+          <div class="ca-faq-item__head">
+            <p class="ca-faq-item__q">Буду ли я взаимодействовать с командой проекта?</p>
+            <span class="ca-faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          </div>
+          <div class="ca-faq-item__body">
+            Да. За каждым проектом закреплён персональный аккаунт-менеджер, который является вашей точкой контакта и координирует всю команду специалистов.
+          </div>
+        </div>
+
+        <div class="ca-faq-item">
+          <div class="ca-faq-item__head">
+            <p class="ca-faq-item__q">Какие задачи бизнеса решает контекстная реклама?</p>
+            <span class="ca-faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          </div>
+          <div class="ca-faq-item__body">
+            Привлечение целевых клиентов, рост продаж, повышение узнаваемости бренда, вывод нового продукта на рынок, удержание аудитории через ретаргетинг.
+          </div>
+        </div>
+
+        <div class="ca-faq-item">
+          <div class="ca-faq-item__head">
+            <p class="ca-faq-item__q">Какой бюджет будет оптимальным для контекста?</p>
+            <span class="ca-faq-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          </div>
+          <div class="ca-faq-item__body">
+            Минимальный рекомендуемый бюджет — от 30 000 ₽/мес. Оптимальный определяется нишей, конкуренцией и целями. Мы рассчитаем прогнозный бюджет бесплатно на основе аудита конкурентов.
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="ca-faq-sidebar">
+        <p class="ca-faq-sidebar__pre">Хотите</p>
+        <h3 class="ca-faq-sidebar__title">привлечь больше клиентов?</h3>
+        <img src="/images/contextualAdvertising/менеждер.png" alt="Менеджер по работе с клиентами" class="ca-faq-sidebar__img">
+        <a href="#discuss" class="ca-btn ca-btn--cyan" style="width:100%;justify-content:center;">Связаться с менеджером</a>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+{# ════════════════════════════════════════════════════════
+   07. КОМАНДА
+   ════════════════════════════════════════════════════════ #}
+<section class="ca-team" id="team">
+  <div class="ca-team__watermark">Команда</div>
+  <div class="container">
+
+    <div class="ca-section-label"><span class="ca-section-label__num" style="color:#05a8ff;">07</span></div>
+    <h2 class="ca-section-title ca-section-title--white">Кто будет работать над вашим проектом</h2>
+
+    <div class="ca-team-slider">
+      <div class="ca-team-member ca-team-member--sm">
+        <img src="/images/contextualAdvertising/СЕО.png" alt="SEO оптимизатор Олег" class="ca-team-member__photo">
+        <span class="ca-team-member__role">SEO оптимизатор</span>
+        <span class="ca-team-member__name-badge">Олег</span>
+      </div>
+      <div class="ca-team-member ca-team-member--md">
+        <img src="/images/contextualAdvertising/Руководитель.png" alt="Руководитель проектов Михаил" class="ca-team-member__photo">
+        <span class="ca-team-member__role">Руководитель проектов</span>
+        <span class="ca-team-member__name-badge">Михаил</span>
+      </div>
+      <div class="ca-team-member ca-team-member--lg">
+        <img src="/images/contextualAdvertising/Менеджер.png" alt="Управляющий Тимур" class="ca-team-member__photo">
+        <span class="ca-team-member__role">Управляющий</span>
+        <span class="ca-team-member__name-badge">Тимур</span>
+      </div>
+      <div class="ca-team-member ca-team-member--md">
+        <img src="/images/contextualAdvertising/Дизайнеро.png" alt="Дизайнер Александр" class="ca-team-member__photo">
+        <span class="ca-team-member__role">Дизайнер</span>
+        <span class="ca-team-member__name-badge">Александр</span>
+      </div>
+      <div class="ca-team-member ca-team-member--sm">
+        <img src="/images/contextualAdvertising/Прогарммист.png" alt="Программист Илья" class="ca-team-member__photo">
+        <span class="ca-team-member__role">Программист</span>
+        <span class="ca-team-member__name-badge">Илья</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{# ════════════════════════════════════════════════════════
+   08. ГАРАНТИИ
+   ════════════════════════════════════════════════════════ #}
+<section class="ca-section" id="guarantees">
+  <div class="container">
+
+    <div class="ca-section-label"><span class="ca-section-label__num">08</span></div>
+    <h2 class="ca-section-title">Репутационные гарантии</h2>
+
+    <div class="ca-guarantees">
+      <div class="ca-guarantees__person">
+        <img src="/images/contextualAdvertising/Бизнесмен.png" alt="Специалист с документом — репутационные гарантии">
+      </div>
+      <div class="ca-guarantees__slider">
+        <div class="swiper" id="guaranteesSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="ca-doc-slide">
+                <div class="placeholder-img">
+                  <svg width="32" height="40" viewBox="0 0 32 40" fill="none"><rect x="2" y="2" width="28" height="36" rx="3" stroke="#ccc" stroke-width="2"/><path d="M8 12h16M8 18h16M8 24h10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  Документ 1
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="ca-doc-slide">
+                <div class="placeholder-img">
+                  <svg width="32" height="40" viewBox="0 0 32 40" fill="none"><rect x="2" y="2" width="28" height="36" rx="3" stroke="#ccc" stroke-width="2"/><path d="M8 12h16M8 18h16M8 24h10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  Документ 2
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="ca-doc-slide">
+                <div class="placeholder-img">
+                  <svg width="32" height="40" viewBox="0 0 32 40" fill="none"><rect x="2" y="2" width="28" height="36" rx="3" stroke="#ccc" stroke-width="2"/><path d="M8 12h16M8 18h16M8 24h10" stroke="#ccc" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  Документ 3
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ca-slider-nav">
+          <button class="ca-slider-nav__btn" id="guarPrev">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="ca-slider-nav__btn" id="guarNext">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <div class="ca-slider-nav__dots" id="guarDots">
+            <div class="ca-slider-nav__dot is-active"></div>
+            <div class="ca-slider-nav__dot"></div>
+            <div class="ca-slider-nav__dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{# ════════════════════════════════════════════════════════
+   DISCOUNT FORM
+   ════════════════════════════════════════════════════════ #}
+<div class="container">
+  <div class="ca-discount">
+    <div class="ca-discount__content">
+      <h3 class="ca-discount__title">Дарим скидку <span>5%</span> при заказе с сайта</h3>
+      <form class="ca-discount__form" id="discountForm" novalidate>
+        <input class="ca-input" type="text" name="name" placeholder="Ваше имя">
+        <input class="ca-input" type="tel" name="phone" placeholder="Ваш телефон">
+        <input class="ca-input" type="email" name="email" placeholder="Ваш email">
+        <input class="ca-input" type="url" name="site" placeholder="Ваш сайт">
+        <div class="ca-discount__bottom">
+          <label class="ca-consent">
+            <input type="checkbox" name="agree" required>
+            Нажимая на кнопку «Отправить» вы соглашаетесь с условиями персональной обработки данных
+          </label>
+          <button type="submit" class="ca-btn ca-btn--primary" style="color:#0d1b3e;flex-shrink:0;">
+            Отправить &rarr;
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="ca-discount__img">
+      <div class="placeholder-img">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="4" y="8" width="36" height="26" rx="3" stroke="rgba(255,255,255,0.2)" stroke-width="2"/><path d="M12 20h24M12 26h16" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round"/></svg>
+        Яндекс Директ
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ════════════════════════════════════════════════════════
+   09. ИНСТРУМЕНТЫ
+   ════════════════════════════════════════════════════════ #}
+<section class="ca-section ca-section--gray" id="tools">
+  <div class="container">
+
+    <div class="ca-section-label"><span class="ca-section-label__num">09</span></div>
+    <h2 class="ca-section-title">Наши инструменты и технологии</h2>
+
+    <div class="ca-tools">
+      <div class="ca-tools__left">
+        <div class="ca-tools__card">
+          <div class="ca-tools__card-header">
+            <div class="ca-tools__card-header-icon"></div>
+            <div class="ca-services__nav">
+              <button class="ca-services__arrow" id="toolPrev" aria-label="Назад">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button class="ca-services__arrow" id="toolNext" aria-label="Вперёд">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+          <h3 class="ca-tools__card-title" id="toolTitle">Семантическое ядро</h3>
+          <p class="ca-tools__card-text" id="toolText">
+            Изначально собираем максимально полный список запросов, затем вручную прорабатываем его,
+            проверяя соответствие тематике и предложению. Согласовываем с вами подобранные фразы:
+            взгляд с разных сторон помогает оставить в списке только самые целевые слова.
+          </p>
+          <div class="ca-tools__card-tags">
+            <span class="ca-tool-tag is-active" data-tool="0">Семантическое ядро</span>
+            <span class="ca-tool-tag" data-tool="1">Минус-слова</span>
+            <span class="ca-tool-tag" data-tool="2">Смарт-баннеры и динамический ремаркетинг</span>
+            <span class="ca-tool-tag" data-tool="3">Таргетинг</span>
+            <span class="ca-tool-tag" data-tool="4">Анализ рекламы</span>
+            <span class="ca-tool-tag" data-tool="5">Средства аналитики</span>
+            <span class="ca-tool-tag" data-tool="6">Структурирование</span>
+            <span class="ca-tool-tag" data-tool="7">Графические объявления</span>
+            <span class="ca-tool-tag" data-tool="8">УТП в быстрых ссылках UTM метки</span>
+          </div>
+        </div>
+      </div>
+      <div class="ca-tools__right">
+        <img src="/images/contextualAdvertising/я.png" alt="Яндекс.Директ — Сертифицированное агентство 2024">
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ════════════════════════════════════════════════════════
+   10. КОНТАКТЫ
+   ════════════════════════════════════════════════════════ #}
+<section class="ca-contacts ca-contacts--dark" id="contacts">
+  <div class="ca-contacts__watermark">Главный офис</div>
+  <div class="container">
+
+    <div class="ca-section-label"><span class="ca-section-label__num" style="color:#05a8ff;">10</span></div>
+    <h2 class="ca-section-title ca-section-title--white">Главный офис</h2>
+
+    <div class="ca-contacts-inner">
+      <div>
+        <p class="ca-contacts__address">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="9" r="2.5" stroke-linecap="round"/>
+          </svg>
+          г. Санкт-Петербург, Поэтический бульвар, дом 2 литер а, офис 192
+        </p>
+      </div>
+      <div class="ca-map">
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?ll=30.2321%2C60.0334&z=16&pt=30.2321%2C60.0334%2Cpm2rdm"
+          width="100%"
+          height="100%"
+          frameborder="0"
+          allowfullscreen="true">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{# ════════════════════════════════════════════════════════
+   ОБСУДИТЬ ПРОЕКТ
+   ════════════════════════════════════════════════════════ #}
+<div class="ca-discuss" id="discuss">
+  <div class="container">
+    <span class="ca-discuss__text">Обсудить проект</span>
+    <span class="ca-discuss__plus">+</span>
+  </div>
+</div>
+
+{% endblock %}
